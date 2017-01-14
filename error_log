@@ -1,0 +1,179 @@
+[23-Oct-2015 17:51:30 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[23-Oct-2015 19:11:15 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 06:52:23 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 12:24:07 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 22:20:14 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 22:27:40 America/Sao_Paulo] PHP Fatal error:  Call to undefined function fbarcode() in /home/sisbolet/public_html/clubebeneficios/layout.php on line 1369
+[24-Oct-2015 22:31:54 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 22:31:58 America/Sao_Paulo] PHP Fatal error:  Call to undefined function fbarcode() in /home/sisbolet/public_html/clubebeneficios/layout.php on line 1361
+[24-Oct-2015 22:37:48 America/Sao_Paulo] PHP Fatal error:  Call to undefined function fbarcode() in /home/sisbolet/public_html/clubebeneficios/layout.php on line 1361
+[24-Oct-2015 22:38:03 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 22:40:56 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 22:41:05 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 22:41:10 America/Sao_Paulo] PHP Fatal error:  Call to undefined function fbarcode() in /home/sisbolet/public_html/clubebeneficios/layout.php on line 396
+[24-Oct-2015 22:42:01 America/Sao_Paulo] PHP Fatal error:  Call to undefined function fbarcode() in /home/sisbolet/public_html/clubebeneficios/layout.php on line 419
+[24-Oct-2015 22:44:03 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 22:44:26 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 22:44:51 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[24-Oct-2015 23:05:06 America/Sao_Paulo] PHP Fatal error:  Call to undefined function php_info() in /home/sisbolet/public_html/clubebeneficios/layout.php on line 74
+[24-Oct-2015 23:05:37 America/Sao_Paulo] PHP Fatal error:  Call to undefined function fbarcode() in /home/sisbolet/public_html/clubebeneficios/layout.php on line 419
+[24-Oct-2015 23:12:01 America/Sao_Paulo] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 5612
+[27-Oct-2015 09:48:47 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'Exception' with message 'Could not locate PDF on 'boleto901.pdf'' in /home/sisbolet/public_html/clubebeneficios/PDFMerger-master/PDFMerger.php:58
+Stack trace:
+#0 /home/sisbolet/public_html/clubebeneficios/emissao.php(393): PDFMerger->addPDF('boleto901.pdf', 'all')
+#1 {main}
+  thrown in /home/sisbolet/public_html/clubebeneficios/PDFMerger-master/PDFMerger.php on line 58
+[27-Oct-2015 09:49:19 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'Exception' with message 'Could not locate PDF on 'boleto901.pdf'' in /home/sisbolet/public_html/clubebeneficios/PDFMerger-master/PDFMerger.php:58
+Stack trace:
+#0 /home/sisbolet/public_html/clubebeneficios/emissao.php(393): PDFMerger->addPDF('boleto901.pdf', 'all')
+#1 {main}
+  thrown in /home/sisbolet/public_html/clubebeneficios/PDFMerger-master/PDFMerger.php on line 58
+[27-Oct-2015 09:49:19 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'Exception' with message 'Could not locate PDF on 'boleto901.pdf'' in /home/sisbolet/public_html/clubebeneficios/PDFMerger-master/PDFMerger.php:58
+Stack trace:
+#0 /home/sisbolet/public_html/clubebeneficios/emissao.php(393): PDFMerger->addPDF('boleto901.pdf', 'all')
+#1 {main}
+  thrown in /home/sisbolet/public_html/clubebeneficios/PDFMerger-master/PDFMerger.php on line 58
+[27-Oct-2015 10:47:57 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'Exception' with message 'Could not locate PDF on 'boleto901.pdf'' in /home/sisbolet/public_html/clubebeneficios/PDFMerger-master/PDFMerger.php:58
+Stack trace:
+#0 /home/sisbolet/public_html/clubebeneficios/emissao.php(393): PDFMerger->addPDF('boleto901.pdf', 'all')
+#1 {main}
+  thrown in /home/sisbolet/public_html/clubebeneficios/PDFMerger-master/PDFMerger.php on line 58
+[27-Oct-2015 12:13:03 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[27-Oct-2015 20:18:19 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[28-Oct-2015 10:10:20 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[28-Oct-2015 11:47:59 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[28-Oct-2015 12:11:05 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[28-Oct-2015 15:28:19 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[28-Oct-2015 18:20:05 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[28-Oct-2015 23:01:57 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[29-Oct-2015 06:02:54 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[29-Oct-2015 06:09:46 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[29-Oct-2015 06:26:48 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[29-Oct-2015 09:01:41 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[29-Oct-2015 13:01:03 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[29-Oct-2015 14:40:22 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[29-Oct-2015 15:32:15 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[30-Oct-2015 08:32:27 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[30-Oct-2015 11:33:24 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[30-Oct-2015 13:44:36 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[30-Oct-2015 17:06:15 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[30-Oct-2015 17:06:28 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[30-Oct-2015 17:40:50 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[30-Oct-2015 17:41:05 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[30-Oct-2015 17:46:47 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>../boleto/imagens/p.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[30-Oct-2015 18:13:24 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°4</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/_class/parsingHtml.class.php<br>Ligne : 119<br><br>Code HTML non valide, les balises ne sont pas fermées dans le bon ordre.<br>Etat : <pre>Array
+(
+    [0] => html
+    [1] => head
+    [2] => meta
+)
+</pre><br><br>HTML : ...&gt;
+&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/head&gt;
+
+
+&lt;page backtop=&quot;7mm&quot; backbottom...
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/_class/parsingHtml.class.php on line 119
+[30-Oct-2015 18:13:27 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°4</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/_class/parsingHtml.class.php<br>Ligne : 119<br><br>Code HTML non valide, les balises ne sont pas fermées dans le bon ordre.<br>Etat : <pre>Array
+(
+    [0] => html
+    [1] => head
+    [2] => meta
+)
+</pre><br><br>HTML : ...&gt;
+&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/head&gt;
+
+
+&lt;page backtop=&quot;7mm&quot; backbottom...
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/_class/parsingHtml.class.php on line 119
+[30-Oct-2015 18:17:57 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°4</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/_class/parsingHtml.class.php<br>Ligne : 119<br><br>Code HTML non valide, les balises ne sont pas fermées dans le bon ordre.<br>Etat : <pre>Array
+(
+    [0] => html
+    [1] => head
+    [2] => meta
+)
+</pre><br><br>HTML : ...&gt;
+&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/head&gt;
+
+
+&lt;page backtop=&quot;7mm&quot; backbottom...
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/_class/parsingHtml.class.php on line 119
+[30-Oct-2015 18:18:00 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°4</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/_class/parsingHtml.class.php<br>Ligne : 119<br><br>Code HTML non valide, les balises ne sont pas fermées dans le bon ordre.<br>Etat : <pre>Array
+(
+    [0] => html
+    [1] => head
+    [2] => meta
+)
+</pre><br><br>HTML : ...&gt;
+&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot;&gt;&lt;/head&gt;
+
+
+&lt;page backtop=&quot;7mm&quot; backbottom...
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/_class/parsingHtml.class.php on line 119
+[30-Oct-2015 18:29:37 America/Sao_Paulo] PHP Fatal error:  Uncaught exception 'Exception' with message 'Could not locate PDF on 'boleto901.pdf'' in /home/sisbolet/public_html/clubebeneficios/PDFMerger-master/PDFMerger.php:58
+Stack trace:
+#0 /home/sisbolet/public_html/clubebeneficios/emissao.php(392): PDFMerger->addPDF('boleto901.pdf', 'all')
+#1 {main}
+  thrown in /home/sisbolet/public_html/clubebeneficios/PDFMerger-master/PDFMerger.php on line 58
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto901.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto902.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto903.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto904.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto905.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto906.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto907.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto908.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto909.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto910.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto911.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto913.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto914.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto915.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto916.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto917.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto918.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto919.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto920.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[30-Oct-2015 19:48:20 America/Sao_Paulo] PHP Warning:  unlink(boleto921.pdf) [<a href='function.unlink'>function.unlink</a>]: No such file or directory in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 397
+[03-Nov-2015 07:09:17 America/Sao_Paulo] PHP Fatal error:  Call to undefined function uft8_encode() in /home/sisbolet/public_html/clubebeneficios/layout.php on line 98
+[03-Nov-2015 07:13:53 America/Sao_Paulo] PHP Fatal error:  Call to undefined function uft8_encode() in /home/sisbolet/public_html/clubebeneficios/emissao.php on line 98
+[04-Nov-2015 15:38:03 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>imagens/1.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[04-Nov-2015 15:38:07 America/Sao_Paulo] PHP Fatal error:  Uncaught <span style="color: #AA0000; font-weight: bold;">ERREUR n°6</span><br>Fichier : /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php<br>Ligne : 1319<br><br>Impossible de charger l'image <b>imagens/1.png</b>
+  thrown in /home/sisbolet/public_html/clubebeneficios/html2pdf/html2pdf.class.php on line 1319
+[20-Jan-2016 12:01:56 America/Sao_Paulo] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in /home/sisbolet/public_html/clubebeneficios/html2pdf/_tcpdf_5.0.002/tcpdf.php on line 8439
+[20-Jan-2016 12:03:06 America/Sao_Paulo] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in /home/sisbolet/public_html/clubebeneficios/html2pdf/_class/parsingCss.class.php on line 182
