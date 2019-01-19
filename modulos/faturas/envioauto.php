@@ -23,7 +23,7 @@ while($n2 = mysql_fetch_array($consulta2))
 	$id_servico4	= $n2['id_servico4'];
 	$id_servico5	= $n2['id_servico5'];
 	
-	// TOTAL DE SERVIÇOS
+	// TOTAL DE SERVIï¿½OS
 	$servico1 = chamacampo('tiposervicos','nome',$id_servico1);
 	$servico2 = chamacampo('tiposervicos','nome',$id_servico2);
 	$servico3 = chamacampo('tiposervicos','nome',$id_servico3);
@@ -58,29 +58,29 @@ while($n2 = mysql_fetch_array($consulta2))
 	include ("Mail.php");
 	include ("Mail/mime.php");
 	
-	# Variável de teste de upload
+	# Variï¿½vel de teste de upload
 	$up=0;
 	
 	# E-mail de destino. Caso seja mais de um destino, crie um array de e-mails.
-	# *OBRIGATÓRIO*
+	# *OBRIGATï¿½RIO*
 	//$recipients = $email;
 	$recipients = ''.$email.','.$email_copia_seguranca.'';
 	
-	# Cabeçalho do e-mail.
+	# Cabeï¿½alho do e-mail.
 	$headers = 
 	array (
-	  'From'    => ''.utf8_decode($nome_remetende_cobranca).' <'.$email_remetente_cobranca.'>', # O 'From' é *OBRIGATÓRIO*.
+	  'From'    => ''.utf8_decode($nome_remetende_cobranca).' <'.$email_remetente_cobranca.'>', # O 'From' ï¿½ *OBRIGATï¿½RIO*.
 	  'To'      => $recipients,
 	  'Subject' => 'Lembrete de vencimento da mensalidade'
 	);
 	
-	# Utilize esta opção caso deseje definir o e-mail de resposta
+	# Utilize esta opï¿½ï¿½o caso deseje definir o e-mail de resposta
 	# $headers['Reply-To'] = 'EMailDeResposta@DominioDeResposta.com';
 	
-	# Utilize esta opção caso deseje definir o e-mail de retorno em caso de erro de envio
+	# Utilize esta opï¿½ï¿½o caso deseje definir o e-mail de retorno em caso de erro de envio
 	# $headers['Errors-To'] = 'EMailDeRerornoDeERRO@DominioDeretornoDeErro.com';
 	
-	# Utilize esta opção caso deseje definir a prioridade do e-mail
+	# Utilize esta opï¿½ï¿½o caso deseje definir a prioridade do e-mail
 	# $headers['X-Priority'] = '3'; # 1 UrgentMessage, 3 Normal  
 	
 	# Define o tipo de final de linha.
@@ -93,17 +93,17 @@ while($n2 = mysql_fetch_array($consulta2))
 	
 	Prezado cliente,
 	<br><br>
-	<i>Este é um e-mail AUTOMÁTICO para lhe lembrar de sua mensalidade junto à '.utf8_decode($nome_remetende_cobranca).'.</i>
+	<i>Este ï¿½ um e-mail AUTOMï¿½TICO para lhe lembrar de sua mensalidade junto ï¿½ '.utf8_decode($nome_remetende_cobranca).'.</i>
 	<br><br>
-	Descrição da fatura: <b>'.utf8_decode($servicos).'</b>
+	Descriï¿½ï¿½o da fatura: <b>'.utf8_decode($servicos).'</b>
 	<br><br>
-	Caso ainda não tenha efetuado o pagamento do vencimento abaixo, entre em <b><a href="'.$urlsistema.'fatura.php?i='.decbin($id).'">'.$urlsistema.'fatura.php?i='.decbin($id).'</a></b>
+	Caso ainda nï¿½o tenha efetuado o pagamento do vencimento abaixo, entre em <b><a href="'.$urlsistema.'fatura.php?i='.decbin($id).'">'.$urlsistema.'fatura.php?i='.decbin($id).'</a></b>
 	<br><br>
-	<b>Você pode efetuar seu pagamento por '.utf8_decode($recebimentos_ativos).'. A data de vencimento da sua conta será dia '.$vencimento.'.</b>
+	<b>Vocï¿½ pode efetuar seu pagamento por '.utf8_decode($recebimentos_ativos).'. A data de vencimento da sua conta serï¿½ dia '.$vencimento.'.</b>
 	<br>
-	Pague sempre sua mensalidade em dia. Em caso de imprevistos, e precisar atrasar seu pagamento, por gentileza nos avise com antecedência, desta forma evitamos a suspensão de seus serviços.
+	Pague sempre sua mensalidade em dia. Em caso de imprevistos, e precisar atrasar seu pagamento, por gentileza nos avise com antecedï¿½ncia, desta forma evitamos a suspensï¿½o de seus serviï¿½os.
 	<br><br>
-	Em caso de atraso superior a 10 dias, sem aviso de atraso de pagamento seus serviços serão suspensos automaticamente.
+	Em caso de atraso superior a 10 dias, sem aviso de atraso de pagamento seus serviï¿½os serï¿½o suspensos automaticamente.
 	<br><br>
 	Atenciosamente,
 	<br><br>
@@ -139,44 +139,44 @@ while($n2 = mysql_fetch_array($consulta2))
 	}
 	else
 	{
-		//echo "<h1>O arquivo não foi transferido!</h1>";
-		//echo "<h2><font color='red'>Caminho ou nome de arquivo Inválido</font></h2>";
+		//echo "<h1>O arquivo nï¿½o foi transferido!</h1>";
+		//echo "<h2><font color='red'>Caminho ou nome de arquivo Invï¿½lido</font></h2>";
 	}
 	
 	##  # Anexa um arquivo ao email.
 	$mime->addAttachment($caminho);
 	*/
 	
-	# Procesa todas as informações.
+	# Procesa todas as informaï¿½ï¿½es.
 	$body = $mime->get();
 	$headers = $mime->headers($headers);
 	
-	# Parâmetros para o SMTP. *OBRIGATÓRIO*
+	# Parï¿½metros para o SMTP. *OBRIGATï¿½RIO*
 	$params = 
 	array (
-	  'auth' => true, # Define que o SMTP requer autenticação.
+	  'auth' => true, # Define que o SMTP requer autenticaï¿½ï¿½o.
 	  /*'port' => '465',
 	  'StartTLS' => true,*/
 	  'host' => ''.$servidor_smtp.'', # Servidor SMTP
-	  'username' => ''.$usuario_smtp.'', # Usuário do SMTP
+	  'username' => ''.$usuario_smtp.'', # Usuï¿½rio do SMTP
 	  'password' => ''.$senha_smtp.'' # Senha do seu MailBox.
 	
 	);
 	/*$params = 
 	array (
-	  'auth' => true, # Define que o SMTP requer autenticação.
+	  'auth' => true, # Define que o SMTP requer autenticaï¿½ï¿½o.
 	  'port' => '465',
 	  'host' => 'ssl://smtp.gmail.com', # Servidor SMTP
-	  'username' => 'contato@agenciards.com.br', # Usuário do SMTP
+	  'username' => 'contato@sistemafinanceiro.com.br', # Usuï¿½rio do SMTP
 	  'password' => 'rdsmilionario$' # Senha do seu MailBox.
 	
 	);*/
 	$data2 = data_hora();
-	# Define o método de envio
+	# Define o mï¿½todo de envio
 	$mail_object =& Mail::factory('smtp', $params);
 	
-	# Envia o email. Se não ocorrer erro, retorna TRUE caso contrário, retorna um
-	# objeto PEAR_Error. Para ler a mensagem de erro, use o método 'getMessage()'.
+	# Envia o email. Se nï¿½o ocorrer erro, retorna TRUE caso contrï¿½rio, retorna um
+	# objeto PEAR_Error. Para ler a mensagem de erro, use o mï¿½todo 'getMessage()'.
 	$result = $mail_object->send($recipients, $headers, $body);
 	if (PEAR::IsError($result))
 	{
@@ -217,7 +217,7 @@ while($n = mysql_fetch_array($consulta))
 	$id_servico4	= $n['id_servico4'];
 	$id_servico5	= $n['id_servico5'];
 	
-	// TOTAL DE SERVIÇOS
+	// TOTAL DE SERVIï¿½OS
 	$servico1 = chamacampo('tiposervicos','nome',$id_servico1);
 	$servico2 = chamacampo('tiposervicos','nome',$id_servico2);
 	$servico3 = chamacampo('tiposervicos','nome',$id_servico3);
@@ -252,29 +252,29 @@ while($n = mysql_fetch_array($consulta))
 	include ("Mail.php");
 	include ("Mail/mime.php");
 	
-	# Variável de teste de upload
+	# Variï¿½vel de teste de upload
 	$up=0;
 	
 	# E-mail de destino. Caso seja mais de um destino, crie um array de e-mails.
-	# *OBRIGATÓRIO*
+	# *OBRIGATï¿½RIO*
 	//$recipients = $email;
 	$recipients = ''.$email.','.$email_copia_seguranca.'';
 	
-	# Cabeçalho do e-mail.
+	# Cabeï¿½alho do e-mail.
 	$headers = 
 	array (
-	  'From'    => ''.utf8_decode($nome_remetende_cobranca).' <'.$email_remetente_cobranca.'>', # O 'From' é *OBRIGATÓRIO*.
+	  'From'    => ''.utf8_decode($nome_remetende_cobranca).' <'.$email_remetente_cobranca.'>', # O 'From' ï¿½ *OBRIGATï¿½RIO*.
 	  'To'      => $recipients,
 	  'Subject' => 'Lembrete de vencimento da mensalidade - HOJE'
 	);
 	
-	# Utilize esta opção caso deseje definir o e-mail de resposta
+	# Utilize esta opï¿½ï¿½o caso deseje definir o e-mail de resposta
 	# $headers['Reply-To'] = 'EMailDeResposta@DominioDeResposta.com';
 	
-	# Utilize esta opção caso deseje definir o e-mail de retorno em caso de erro de envio
+	# Utilize esta opï¿½ï¿½o caso deseje definir o e-mail de retorno em caso de erro de envio
 	# $headers['Errors-To'] = 'EMailDeRerornoDeERRO@DominioDeretornoDeErro.com';
 	
-	# Utilize esta opção caso deseje definir a prioridade do e-mail
+	# Utilize esta opï¿½ï¿½o caso deseje definir a prioridade do e-mail
 	# $headers['X-Priority'] = '3'; # 1 UrgentMessage, 3 Normal  
 	
 	# Define o tipo de final de linha.
@@ -287,17 +287,17 @@ while($n = mysql_fetch_array($consulta))
 	
 	Prezado cliente,
 	<br><br>
-	<i>Este é um e-mail AUTOMÁTICO para lhe lembrar de sua mensalidade junto à '.utf8_decode($nome_remetende_cobranca).'.</i>
+	<i>Este ï¿½ um e-mail AUTOMï¿½TICO para lhe lembrar de sua mensalidade junto ï¿½ '.utf8_decode($nome_remetende_cobranca).'.</i>
 	<br><br>
-	Descrição da fatura: <b>'.utf8_decode($servicos).'</b>
+	Descriï¿½ï¿½o da fatura: <b>'.utf8_decode($servicos).'</b>
 	<br><br>
-	Caso ainda não tenha efetuado o pagamento do vencimento abaixo, entre em <b><a href="'.$urlsistema.'fatura.php?i='.decbin($id).'">'.$urlsistema.'fatura.php?i='.decbin($id).'</a></b>
+	Caso ainda nï¿½o tenha efetuado o pagamento do vencimento abaixo, entre em <b><a href="'.$urlsistema.'fatura.php?i='.decbin($id).'">'.$urlsistema.'fatura.php?i='.decbin($id).'</a></b>
 	<br><br>
-	<b>Você pode efetuar seu pagamento por '.utf8_decode($recebimentos_ativos).'. A data de vencimento da sua conta é hoje, dia '.$vencimento.'.</b>
+	<b>Vocï¿½ pode efetuar seu pagamento por '.utf8_decode($recebimentos_ativos).'. A data de vencimento da sua conta ï¿½ hoje, dia '.$vencimento.'.</b>
 	<br>
-	Pague sempre sua mensalidade em dia. Em caso de imprevistos, e precisar atrasar seu pagamento, por gentileza nos avise com antecedência, desta forma evitamos a suspensão de seus serviços.
+	Pague sempre sua mensalidade em dia. Em caso de imprevistos, e precisar atrasar seu pagamento, por gentileza nos avise com antecedï¿½ncia, desta forma evitamos a suspensï¿½o de seus serviï¿½os.
 	<br><br>
-	Em caso de atraso superior a 10 dias, sem aviso de atraso de pagamento seus serviços serão suspensos automaticamente.
+	Em caso de atraso superior a 10 dias, sem aviso de atraso de pagamento seus serviï¿½os serï¿½o suspensos automaticamente.
 	<br><br>
 	Atenciosamente,
 	<br><br>
@@ -333,44 +333,44 @@ while($n = mysql_fetch_array($consulta))
 	}
 	else
 	{
-		//echo "<h1>O arquivo não foi transferido!</h1>";
-		//echo "<h2><font color='red'>Caminho ou nome de arquivo Inválido</font></h2>";
+		//echo "<h1>O arquivo nï¿½o foi transferido!</h1>";
+		//echo "<h2><font color='red'>Caminho ou nome de arquivo Invï¿½lido</font></h2>";
 	}
 	
 	##  # Anexa um arquivo ao email.
 	$mime->addAttachment($caminho);
 	*/
 	
-	# Procesa todas as informações.
+	# Procesa todas as informaï¿½ï¿½es.
 	$body = $mime->get();
 	$headers = $mime->headers($headers);
 	
-	# Parâmetros para o SMTP. *OBRIGATÓRIO*
+	# Parï¿½metros para o SMTP. *OBRIGATï¿½RIO*
 	$params = 
 	array (
-	  'auth' => true, # Define que o SMTP requer autenticação.
+	  'auth' => true, # Define que o SMTP requer autenticaï¿½ï¿½o.
 	  /*'port' => '465',
 	  'StartTLS' => true,*/
 	  'host' => ''.$servidor_smtp.'', # Servidor SMTP
-	  'username' => ''.$usuario_smtp.'', # Usuário do SMTP
+	  'username' => ''.$usuario_smtp.'', # Usuï¿½rio do SMTP
 	  'password' => ''.$senha_smtp.'' # Senha do seu MailBox.
 	
 	);/*
 	$params = 
 	array (
-	  'auth' => true, # Define que o SMTP requer autenticação.
+	  'auth' => true, # Define que o SMTP requer autenticaï¿½ï¿½o.
 	  'port' => '465',
 	  'host' => 'ssl://smtp.gmail.com', # Servidor SMTP
-	  'username' => 'contato@agenciards.com.br', # Usuário do SMTP
+	  'username' => 'contato@sistemafinanceiro.com.br', # Usuï¿½rio do SMTP
 	  'password' => 'rdsmilionario$' # Senha do seu MailBox.
 	
 	);*/
 	$data2 = data_hora();
-	# Define o método de envio
+	# Define o mï¿½todo de envio
 	$mail_object =& Mail::factory('smtp', $params);
 	
-	# Envia o email. Se não ocorrer erro, retorna TRUE caso contrário, retorna um
-	# objeto PEAR_Error. Para ler a mensagem de erro, use o método 'getMessage()'.
+	# Envia o email. Se nï¿½o ocorrer erro, retorna TRUE caso contrï¿½rio, retorna um
+	# objeto PEAR_Error. Para ler a mensagem de erro, use o mï¿½todo 'getMessage()'.
 	$result = $mail_object->send($recipients, $headers, $body);
 	if (PEAR::IsError($result))
 	{
@@ -409,7 +409,7 @@ while($n = mysql_fetch_array($consulta))
 	$id_servico4	= $n['id_servico4'];
 	$id_servico5	= $n['id_servico5'];
 	
-	// TOTAL DE SERVIÇOS
+	// TOTAL DE SERVIï¿½OS
 	$servico1 = chamacampo('tiposervicos','nome',$id_servico1);
 	$servico2 = chamacampo('tiposervicos','nome',$id_servico2);
 	$servico3 = chamacampo('tiposervicos','nome',$id_servico3);
@@ -444,29 +444,29 @@ while($n = mysql_fetch_array($consulta))
 	include ("Mail.php");
 	include ("Mail/mime.php");
 	
-	# Variável de teste de upload
+	# Variï¿½vel de teste de upload
 	$up=0;
 	
 	# E-mail de destino. Caso seja mais de um destino, crie um array de e-mails.
-	# *OBRIGATÓRIO*
+	# *OBRIGATï¿½RIO*
 	//$recipients = $email;
 	$recipients = ''.$email.','.$email_copia_seguranca.'';
 	
-	# Cabeçalho do e-mail.
+	# Cabeï¿½alho do e-mail.
 	$headers = 
 	array (
-	  'From'    => ''.utf8_decode($nome_remetende_cobranca).' <'.$email_remetente_cobranca.'>', # O 'From' é *OBRIGATÓRIO*.
+	  'From'    => ''.utf8_decode($nome_remetende_cobranca).' <'.$email_remetente_cobranca.'>', # O 'From' ï¿½ *OBRIGATï¿½RIO*.
 	  'To'      => $recipients,
-	  'Subject' => 'Lembrete de vencimento da mensalidade há 2 dias'
+	  'Subject' => 'Lembrete de vencimento da mensalidade hï¿½ 2 dias'
 	);
 	
-	# Utilize esta opção caso deseje definir o e-mail de resposta
+	# Utilize esta opï¿½ï¿½o caso deseje definir o e-mail de resposta
 	# $headers['Reply-To'] = 'EMailDeResposta@DominioDeResposta.com';
 	
-	# Utilize esta opção caso deseje definir o e-mail de retorno em caso de erro de envio
+	# Utilize esta opï¿½ï¿½o caso deseje definir o e-mail de retorno em caso de erro de envio
 	# $headers['Errors-To'] = 'EMailDeRerornoDeERRO@DominioDeretornoDeErro.com';
 	
-	# Utilize esta opção caso deseje definir a prioridade do e-mail
+	# Utilize esta opï¿½ï¿½o caso deseje definir a prioridade do e-mail
 	# $headers['X-Priority'] = '3'; # 1 UrgentMessage, 3 Normal  
 	
 	# Define o tipo de final de linha.
@@ -479,19 +479,19 @@ while($n = mysql_fetch_array($consulta))
 	
 	Prezado cliente,
 	<br><br>
-	<i>Este é um e-mail AUTOMÁTICO para lhe lembrar de sua mensalidade junto à '.utf8_decode($nome_remetende_cobranca).'.</i>
+	<i>Este ï¿½ um e-mail AUTOMï¿½TICO para lhe lembrar de sua mensalidade junto ï¿½ '.utf8_decode($nome_remetende_cobranca).'.</i>
 	<br><br>
-	<b>Ainda não identificamos o pagamento de sua mensalidade vencida hà 2 dias ('.$vencimento.'). Acreditamos tratar-se de algum imprevisto ou esquecimento e por isto reenviamos a fatura para pagamento imediato.</b>
+	<b>Ainda nï¿½o identificamos o pagamento de sua mensalidade vencida hï¿½ 2 dias ('.$vencimento.'). Acreditamos tratar-se de algum imprevisto ou esquecimento e por isto reenviamos a fatura para pagamento imediato.</b>
 	<br><br>
-	Descrição da fatura: <b>'.utf8_decode($servicos).'</b>
+	Descriï¿½ï¿½o da fatura: <b>'.utf8_decode($servicos).'</b>
 	<br><br>
-	Caso ainda não tenha efetuado o pagamento do vencimento abaixo, entre em <b><a href="'.$urlsistema.'fatura.php?i='.decbin($id).'">'.$urlsistema.'fatura.php?i='.decbin($id).'</a></b>
+	Caso ainda nï¿½o tenha efetuado o pagamento do vencimento abaixo, entre em <b><a href="'.$urlsistema.'fatura.php?i='.decbin($id).'">'.$urlsistema.'fatura.php?i='.decbin($id).'</a></b>
 	<br><br>
-	<b>Você pode efetuar seu pagamento por '.utf8_decode($recebimentos_ativos).'.
+	<b>Vocï¿½ pode efetuar seu pagamento por '.utf8_decode($recebimentos_ativos).'.
 	<br>
-	Pague sempre sua mensalidade em dia. Em caso de imprevistos, e precisar atrasar seu pagamento, por gentileza nos avise com antecedência, desta forma evitamos a suspensão de seus serviços.
+	Pague sempre sua mensalidade em dia. Em caso de imprevistos, e precisar atrasar seu pagamento, por gentileza nos avise com antecedï¿½ncia, desta forma evitamos a suspensï¿½o de seus serviï¿½os.
 	<br><br>
-	<b>Em caso de atraso superior a 10 dias, sem aviso de atraso de pagamento seus serviços serão suspensos automaticamente.</b>
+	<b>Em caso de atraso superior a 10 dias, sem aviso de atraso de pagamento seus serviï¿½os serï¿½o suspensos automaticamente.</b>
 	<br><br>
 	Atenciosamente,
 	<br><br>
@@ -527,45 +527,45 @@ while($n = mysql_fetch_array($consulta))
 	}
 	else
 	{
-		//echo "<h1>O arquivo não foi transferido!</h1>";
-		//echo "<h2><font color='red'>Caminho ou nome de arquivo Inválido</font></h2>";
+		//echo "<h1>O arquivo nï¿½o foi transferido!</h1>";
+		//echo "<h2><font color='red'>Caminho ou nome de arquivo Invï¿½lido</font></h2>";
 	}
 	
 	##  # Anexa um arquivo ao email.
 	$mime->addAttachment($caminho);
 	*/
 	
-	# Procesa todas as informações.
+	# Procesa todas as informaï¿½ï¿½es.
 	$body = $mime->get();
 	$headers = $mime->headers($headers);
 	
-	# Parâmetros para o SMTP. *OBRIGATÓRIO*
+	# Parï¿½metros para o SMTP. *OBRIGATï¿½RIO*
 	$params = 
 	array (
-	  'auth' => true, # Define que o SMTP requer autenticação.
+	  'auth' => true, # Define que o SMTP requer autenticaï¿½ï¿½o.
 	  /*'port' => '465',
 	  'StartTLS' => true,*/
 	  'host' => ''.$servidor_smtp.'', # Servidor SMTP
-	  'username' => ''.$usuario_smtp.'', # Usuário do SMTP
+	  'username' => ''.$usuario_smtp.'', # Usuï¿½rio do SMTP
 	  'password' => ''.$senha_smtp.'' # Senha do seu MailBox.
 	
 	);
 	/*
 	$params = 
 	array (
-	  'auth' => true, # Define que o SMTP requer autenticação.
+	  'auth' => true, # Define que o SMTP requer autenticaï¿½ï¿½o.
 	  'port' => '465',
 	  'host' => 'ssl://smtp.gmail.com', # Servidor SMTP
-	  'username' => 'contato@agenciards.com.br', # Usuário do SMTP
+	  'username' => 'contato@sistemafinanceiro.com.br', # Usuï¿½rio do SMTP
 	  'password' => 'rdsmilionario$' # Senha do seu MailBox.
 	
 	);*/
 	$data3 = data_hora();
-	# Define o método de envio
+	# Define o mï¿½todo de envio
 	$mail_object =& Mail::factory('smtp', $params);
 	
-	# Envia o email. Se não ocorrer erro, retorna TRUE caso contrário, retorna um
-	# objeto PEAR_Error. Para ler a mensagem de erro, use o método 'getMessage()'.
+	# Envia o email. Se nï¿½o ocorrer erro, retorna TRUE caso contrï¿½rio, retorna um
+	# objeto PEAR_Error. Para ler a mensagem de erro, use o mï¿½todo 'getMessage()'.
 	$result = $mail_object->send($recipients, $headers, $body);
 	if (PEAR::IsError($result))
 	{
@@ -605,7 +605,7 @@ while($n = mysql_fetch_array($consulta))
 	$id_servico4	= $n['id_servico4'];
 	$id_servico5	= $n['id_servico5'];
 	
-	// TOTAL DE SERVIÇOS
+	// TOTAL DE SERVIï¿½OS
 	$servico1 = chamacampo('tiposervicos','nome',$id_servico1);
 	$servico2 = chamacampo('tiposervicos','nome',$id_servico2);
 	$servico3 = chamacampo('tiposervicos','nome',$id_servico3);
@@ -640,29 +640,29 @@ while($n = mysql_fetch_array($consulta))
 	include ("Mail.php");
 	include ("Mail/mime.php");
 	
-	# Variável de teste de upload
+	# Variï¿½vel de teste de upload
 	$up=0;
 	
 	# E-mail de destino. Caso seja mais de um destino, crie um array de e-mails.
-	# *OBRIGATÓRIO*
+	# *OBRIGATï¿½RIO*
 	//$recipients = $email;
 	$recipients = ''.$email.','.$email_copia_seguranca.'';
 	
-	# Cabeçalho do e-mail.
+	# Cabeï¿½alho do e-mail.
 	$headers = 
 	array (
-	  'From'    => ''.utf8_decode($nome_remetende_cobranca).' <'.$email_remetente_cobranca.'>', # O 'From' é *OBRIGATÓRIO*.
+	  'From'    => ''.utf8_decode($nome_remetende_cobranca).' <'.$email_remetente_cobranca.'>', # O 'From' ï¿½ *OBRIGATï¿½RIO*.
 	  'To'      => $recipients,
-	  'Subject' => 'Lembrete de vencimento da mensalidade há 5 dias'
+	  'Subject' => 'Lembrete de vencimento da mensalidade hï¿½ 5 dias'
 	);
 	
-	# Utilize esta opção caso deseje definir o e-mail de resposta
+	# Utilize esta opï¿½ï¿½o caso deseje definir o e-mail de resposta
 	# $headers['Reply-To'] = 'EMailDeResposta@DominioDeResposta.com';
 	
-	# Utilize esta opção caso deseje definir o e-mail de retorno em caso de erro de envio
+	# Utilize esta opï¿½ï¿½o caso deseje definir o e-mail de retorno em caso de erro de envio
 	# $headers['Errors-To'] = 'EMailDeRerornoDeERRO@DominioDeretornoDeErro.com';
 	
-	# Utilize esta opção caso deseje definir a prioridade do e-mail
+	# Utilize esta opï¿½ï¿½o caso deseje definir a prioridade do e-mail
 	# $headers['X-Priority'] = '3'; # 1 UrgentMessage, 3 Normal  
 	
 	# Define o tipo de final de linha.
@@ -675,19 +675,19 @@ while($n = mysql_fetch_array($consulta))
 	
 	Prezado cliente,
 	<br><br>
-	<i>Este é um e-mail AUTOMÁTICO para lhe lembrar de sua mensalidade junto à '.utf8_decode($nome_remetende_cobranca).'.</i>
+	<i>Este ï¿½ um e-mail AUTOMï¿½TICO para lhe lembrar de sua mensalidade junto ï¿½ '.utf8_decode($nome_remetende_cobranca).'.</i>
 	<br><br>
-	<b>Ainda não identificamos o pagamento de sua mensalidade vencida hà 5 dias ('.$vencimento.'). Acreditamos tratar-se de algum imprevisto ou esquecimento e por isto reenviamos a fatura para pagamento imediato.</b>
+	<b>Ainda nï¿½o identificamos o pagamento de sua mensalidade vencida hï¿½ 5 dias ('.$vencimento.'). Acreditamos tratar-se de algum imprevisto ou esquecimento e por isto reenviamos a fatura para pagamento imediato.</b>
 	<br><br>
-	Descrição da fatura: <b>'.utf8_decode($servicos).'</b>
+	Descriï¿½ï¿½o da fatura: <b>'.utf8_decode($servicos).'</b>
 	<br><br>
-	Caso ainda não tenha efetuado o pagamento do vencimento abaixo, entre em <b><a href="'.$urlsistema.'fatura.php?i='.decbin($id).'">'.$urlsistema.'fatura.php?i='.decbin($id).'</a></b>
+	Caso ainda nï¿½o tenha efetuado o pagamento do vencimento abaixo, entre em <b><a href="'.$urlsistema.'fatura.php?i='.decbin($id).'">'.$urlsistema.'fatura.php?i='.decbin($id).'</a></b>
 	<br><br>
-	<b>Você pode efetuar seu pagamento por '.utf8_decode($recebimentos_ativos).'.
+	<b>Vocï¿½ pode efetuar seu pagamento por '.utf8_decode($recebimentos_ativos).'.
 	<br>
-	Pague sempre sua mensalidade em dia. Em caso de imprevistos, e precisar atrasar seu pagamento, por gentileza nos avise com antecedência, desta forma evitamos a suspensão de seus serviços.
+	Pague sempre sua mensalidade em dia. Em caso de imprevistos, e precisar atrasar seu pagamento, por gentileza nos avise com antecedï¿½ncia, desta forma evitamos a suspensï¿½o de seus serviï¿½os.
 	<br><br>
-	<b>Em caso de atraso superior a 10 dias, sem aviso de atraso de pagamento seus serviços serão suspensos automaticamente.</b>
+	<b>Em caso de atraso superior a 10 dias, sem aviso de atraso de pagamento seus serviï¿½os serï¿½o suspensos automaticamente.</b>
 	<br><br>
 	Atenciosamente,
 	<br><br>
@@ -723,45 +723,45 @@ while($n = mysql_fetch_array($consulta))
 	}
 	else
 	{
-		//echo "<h1>O arquivo não foi transferido!</h1>";
-		//echo "<h2><font color='red'>Caminho ou nome de arquivo Inválido</font></h2>";
+		//echo "<h1>O arquivo nï¿½o foi transferido!</h1>";
+		//echo "<h2><font color='red'>Caminho ou nome de arquivo Invï¿½lido</font></h2>";
 	}
 	
 	##  # Anexa um arquivo ao email.
 	$mime->addAttachment($caminho);
 	*/
 	
-	# Procesa todas as informações.
+	# Procesa todas as informaï¿½ï¿½es.
 	$body = $mime->get();
 	$headers = $mime->headers($headers);
 	
-	# Parâmetros para o SMTP. *OBRIGATÓRIO*
+	# Parï¿½metros para o SMTP. *OBRIGATï¿½RIO*
 	$params = 
 	array (
-	  'auth' => true, # Define que o SMTP requer autenticação.
+	  'auth' => true, # Define que o SMTP requer autenticaï¿½ï¿½o.
 	  /*'port' => '465',
 	  'StartTLS' => true,*/
 	  'host' => ''.$servidor_smtp.'', # Servidor SMTP
-	  'username' => ''.$usuario_smtp.'', # Usuário do SMTP
+	  'username' => ''.$usuario_smtp.'', # Usuï¿½rio do SMTP
 	  'password' => ''.$senha_smtp.'' # Senha do seu MailBox.
 	
 	);
 	/*
 	$params = 
 	array (
-	  'auth' => true, # Define que o SMTP requer autenticação.
+	  'auth' => true, # Define que o SMTP requer autenticaï¿½ï¿½o.
 	  'port' => '465',
 	  'host' => 'ssl://smtp.gmail.com', # Servidor SMTP
-	  'username' => 'contato@agenciards.com.br', # Usuário do SMTP
+	  'username' => 'contato@sistemafinanceiro.com.br', # Usuï¿½rio do SMTP
 	  'password' => 'rdsmilionario$' # Senha do seu MailBox.
 	
 	);*/
 	$data3 = data_hora();
-	# Define o método de envio
+	# Define o mï¿½todo de envio
 	$mail_object =& Mail::factory('smtp', $params);
 	
-	# Envia o email. Se não ocorrer erro, retorna TRUE caso contrário, retorna um
-	# objeto PEAR_Error. Para ler a mensagem de erro, use o método 'getMessage()'.
+	# Envia o email. Se nï¿½o ocorrer erro, retorna TRUE caso contrï¿½rio, retorna um
+	# objeto PEAR_Error. Para ler a mensagem de erro, use o mï¿½todo 'getMessage()'.
 	$result = $mail_object->send($recipients, $headers, $body);
 	if (PEAR::IsError($result))
 	{

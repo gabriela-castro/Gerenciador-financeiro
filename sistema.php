@@ -16,7 +16,7 @@ include 'config/check.php';
    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
    <meta content="" name="description" />
    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-   <meta content="Agência RDS" name="author" />
+   <meta content="Sistema Financeiro" name="author" />
 
    <link rel="stylesheet" href="css/admin.css" />
    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
