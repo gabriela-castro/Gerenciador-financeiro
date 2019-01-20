@@ -1,0 +1,60 @@
+<?php
+include '../../config/mysql.php';
+include '../../config/funcoes.php';
+include '../../config/check.php';
+
+$modulo = 'tiposervicos';
+$tabela = 'tiposervicos';
+
+
+$numero = numeroentradas($tabela,'');
+
+
+?>
+<script> datatable('#sample_1'); </script>
+<div class="widget gray">
+                    <div class="widget-title">
+                        <h4><i class="icon-reorder"></i> Tipo de Serviços (<?php echo $numero; ?>)</h4>
+                            <span class="tools">
+                                <button class="btn btn-small" onclick="abrirpopup('modulos/<?php echo $modulo; ?>/form.php?tp=add','Adicionar'); return false;"><i class="icon-plus icon-white"></i> Adicionar</button>
+                            </span>
+                    </div>
+                    <div class="widget-body">
+                        <table class="table table-striped table-bordered table-hover" id="sample_1">
+                            <thead>
+                            <tr>
+                                <th>Serviço</th>
+                                <th class="hidden-phone" width="50">Data</th>
+                                <th class="" width="80">Ação</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+<?php
+
+
+
+$consulta = mysql_query("SELECT * FROM $tabela ORDER BY nome DESC") or die (mysql_error());
+while($n = mysql_fetch_array($consulta))
+{
+
+	$id			= $n['id'];
+	$nome		= utf8_encode($n['nome']);
+	$data		= data_hora_eua_brasil($n['data']);
+
+	
+	echo '
+		<tr class="odd gradeX">
+			<td>'.$nome.'</td>
+			<td class="hidden-phone">'.$data.'</td>
+			<td class="center ">
+			  <button class="btn btn-primary center" data-toggle="modal" onclick="abrirpopup(\'modulos/'.$modulo.'/form.php?tp=edit&id='.$id.'\',\'Editando\');"><i class="icon-pencil"></i></button>
+			  <button class="btn btn-danger center" data-toggle="modal" onclick="abrirpopup(\'modulos/'.$modulo.'/deletar.php?id='.$id.'\',\'Deletando\');"><i class="icon-trash"></i></button>
+			  </td>
+		</tr>';
+}
+?>
+    </tbody>
+</table>
+  
+    </div>
+</div>

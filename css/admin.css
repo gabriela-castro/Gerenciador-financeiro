@@ -1,0 +1,71 @@
+.fleft {
+	float:left;	
+}
+.luz {
+	display:none;
+	/*position:absolute;*/
+	position:fixed;
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	z-index:5000;
+	background-color:#000;
+	opacity:0.65;
+	-moz-opacity: 0.65;
+	filter: alpha(opacity=65);
+}
+.popup {
+	display:none;
+	border-radius:2px;
+	-webkit-border-radius:2px;
+	-moz-border-radius: 2px;
+	-moz-box-shadow: 0 0 10px #000;
+	-webkit-box-shadow: 0 0 10px #000;
+	box-shadow: 0 0 10px #000;
+	background:#fff;
+	left:50%;
+	padding:5px;
+	margin-left:-40%;
+	margin-top:10px;
+	/*position:absolute;*/
+	position:fixed;
+	width:80%;
+	z-index:5100;
+}
+.titulopopup {
+	width:100%;
+	height:40px;
+}
+.titulolistagem p{
+	margin-left:5px;
+	margin-top:-3px;
+	font-size:16px;
+	color:#222;
+	font-weight:bold;
+}
+.titulopopup a{
+	margin-top:9px;
+	float:right;
+	margin-right:4px;	
+}
+.tpopup{
+	float:left;
+	margin-left:4px;
+	margin-bottom:0;
+	margin-top:2px;
+	width:80%;
+}
+.conteudopopup {
+	border:1px solid #DDDDDD;
+	width:98%;
+	padding:1%;
+}
+.carregando{
+	width:100%;
+	height:32px;
+	text-align:center;	
+}
+.pretao {
+	color:#000;	
+}
