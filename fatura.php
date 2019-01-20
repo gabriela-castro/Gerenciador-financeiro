@@ -28,7 +28,7 @@ $valor3			= ($n_fatura['valor3']);
 $valor4			= ($n_fatura['valor4']);
 $valor5			= ($n_fatura['valor5']);
 $status			= $n_fatura['status'];
-$obs			= utf8_encode($n_fatura['obs']); 
+$obs			= utf8_encode($n_fatura['obs']);
 
 if ($v != '1' && $status != '5')
 {
@@ -87,7 +87,7 @@ $uf				= $n_cliente['uf'];
    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
    <meta content="" name="description" />
    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-   <meta content="Agência RDS" name="author" />
+   <meta content="Sistema Financeiro" name="author" />
    <link href="css/admin.css" rel="stylesheet" />
    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
    <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
@@ -100,16 +100,16 @@ $uf				= $n_cliente['uf'];
    <!--
    body,tr,td,div,span,a
    {
-	   color:#000;   
+	   color:#000;
    }
    .fatura {
 	   margin: 0 auto;
 	   margin-top:5px;
 	   padding:10px;
 	   max-width:800px;
-	   border:1px solid #999;	   
+	   border:1px solid #999;
    }
-   
+
 #fatura2 {
 	display:none;
 }
@@ -165,11 +165,11 @@ $uf				= $n_cliente['uf'];
 			{
 				if ($numero_pagamento1 != 0)
 				{
-					
+
 					$consulta_b = mysql_query("SELECT * FROM boletos WHERE status='1'") or die (mysql_error());
 					while($n_b = mysql_fetch_array($consulta_b))
 					{
-					
+
 						echo '<a class="icon-btn span5" href="'.$urlsistema.'boleto/boleto.php?b='.decbin($n_b['id']).'&i='.decbin($id).'">
 							<i class="icon-barcode"></i>
 							<div>Gerar Boleto '.utf8_encode($n_b['banco']).'</div>
@@ -178,13 +178,13 @@ $uf				= $n_cliente['uf'];
 				}
 				if ($numero_pagamento2 != 0)
 				{
-					
+
 					$consulta_o = mysql_query("SELECT * FROM intermediarios WHERE status='1'") or die (mysql_error());
 					while($n_o = mysql_fetch_array($consulta_o))
 					{
 						if ($n_o['id'] == '2')
 						{
-					
+
 						echo '<form action="https://www.paypal.com/cgi-bin/webscr" name="inter_'.$id.'_'.$n_o['id'].'" method="post" target="_top">
 <input type="hidden" name="cmd" value="_xclick">
 <input type="hidden" name="business" value="'.$n_o['email'].'">
@@ -198,8 +198,8 @@ $uf				= $n_cliente['uf'];
 <input type="hidden" name="no_shipping" value="1">
 <input type="hidden" name="undefined_quantity" value="1">
 <input type="hidden" name="rm" value="1">
-<input type="hidden" name="return" value="http://www.agenciards.com.br">
-<input type="hidden" name="cancel_return" value="http://www.agenciards.com.br">
+<input type="hidden" name="return" value="http://www.sistemafinanceiro.com.br">
+<input type="hidden" name="cancel_return" value="http://www.sistemafinanceiro.com.br">
 <input type="hidden" name="shipping" value="0.00">
 <!--<input type="submit" value="Comprar" class="btn" />-->
 

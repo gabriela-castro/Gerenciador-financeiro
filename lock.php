@@ -15,7 +15,7 @@ include 'config/check.php';
    <title>Lock Screen</title>
    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
    <meta content="" name="description" />
-   <meta content="Agência RDS" name="author" />
+   <meta content="Sistema Financeiro" name="author" />
    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
    <link href="assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />

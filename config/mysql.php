@@ -1,52 +1,41 @@
 <?php
 
-$titulo_site	= 'Clube de Benefícios';
-$sistema 		= 'Sis Boletos';
+$titulo_site	= 'Sistema Financeiro';
+$sistema 		= 'Sis Finanças';
 $versao 		= '0.5';
 
 /*DADOS DO BOLETO*/
 
-$email_remetente_cobranca = 'edmilson.financeiro.clubserv@hotmail.com';
-$nome_remetende_cobranca = 'Clube de Benefícios';
-/* $email_copia_seguranca = 'financeiro@agenciards.com.br'; */
-/*$site_remetente_cobranca = 'http://www.agenciards.com.br';*/
-$tel_remetende_cobranca = '21 2215-7902 / 21 3371-6023 / 21 3553-1675';
-$end_remetende_cobranca = 'Rua Sete de Setembro, 67 - Sl. 702 - Centro';
+$email_remetente_cobranca = 'xxx@gmail.com';
+$nome_remetende_cobranca = 'Sistema Financeiro';
+$tel_remetende_cobranca = '21 2222-7902 / 21 3333-6023 / 21 4444-1675';
+$end_remetende_cobranca = 'Rua Sete de Setembro,  Centro';
 $cidade_remetende_cobranca = 'Rio de Janeiro - RJ';
 
 $servidor_smtp = 'smtp.gmail.com';
-$usuario_smtp = 'clubeservidores@gmail.com';
-$senha_smtp = 'clubserv123';
+$usuario_smtp = 'financeiro@gmail.com';
+$senha_smtp = 'senha12';
 
 $recebimentos_ativos = 'Boleto Bancário';
 
 $servidor_conexao = $_SERVER['SERVER_NAME'];
 
-if ($servidor_conexao == 'fenixdigital.no-ip.biz')
-{
-	$urlsistema = 'http://fenixdigital.no-ip.biz/financeiro/';
-	$bd_serv = 'localhost';
-	$bd_user = 'root';
-	$bd_pass = '';
-	$bd_banc = 'financeiro';
-}
-else if ($servidor_conexao == 'www.sisboletos.com.br' || $servidor_conexao == 'sisboletos.com.br')
-{
-	
-	$urlsistema = 'http://www.sisboletos.com.br/clubebeneficios/';
-	$bd_serv = 'localhost';	
-	$bd_user = 'sisbolet_assseg';
-	$bd_pass = 'ass123$$$';
-	$bd_banc = 'sisbolet_ass';
-}
- 
 
-$conexao = mysql_connect($bd_serv,$bd_user,$bd_pass);
-if (!$conexao)
-{
-	die('<center><h1>OPS, ERRO NO MYSQL :(</h1><br><br><br><font size="1" face="arial" color="#666">' . mysql_error().'</font></center>');
-	exit;
-}
-mysql_select_db($bd_banc, $conexao);
+	$urlsistema = 'http://www.sistemafinanceiro.com.br/';
+	$bd_serv = '127.0.0.1';
+	$bd_user = 'root';
+	$bd_pass = 'Rio22janeiro';
+	$bd_banc = 'sistema_financeiro';
+
+
+	try{
+		$link = new mysqli($bd_serv, $bd_user, $bd_pass, $bd_banc);
+	}
+	catch(Error $e){
+	    echo "Error. Não foi possível conectar com a base de dados " . PHP_EOL;
+	    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+	    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+	    exit;
+	}
 
 ?>
