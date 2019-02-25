@@ -24,7 +24,7 @@ $servidor_conexao = $_SERVER['SERVER_NAME'];
 	$urlsistema = 'http://www.sistemafinanceiro.com.br/';
 	$bd_serv = '127.0.0.1';
 	$bd_user = 'root';
-	$bd_pass = 'Rio22janeiro';
+	$bd_pass = '';
 	$bd_banc = 'sistema_financeiro';
 
 

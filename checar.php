@@ -5,12 +5,12 @@ include 'config/mysql.php';
 
 session_start(); 
 
-$login = addslashes(mysql_real_escape_string($_POST["login"]));
-$senha = senha_encode(addslashes(mysql_real_escape_string($_POST['senha'])));
+$login = addslashes(mysqli_real_escape_string($link,$_POST["login"]));
+$senha = senha_encode(addslashes(mysqli_real_escape_string($link,$_POST['senha'])));
 
-$consulta_admin = mysql_query("SELECT id FROM usuarios WHERE login='$login' AND senha='$senha'") or print (mysql_error());
-$n_admin = mysql_fetch_array($consulta_admin);
-$verifica_admin = mysql_num_rows($consulta_admin);
+$consulta_admin = mysqli_query($link,"SELECT id FROM usuarios WHERE login='$login' AND senha='$senha'") or print (mysqli_error());
+$n_admin = mysqli_fetch_array($consulta_admin,MYSQLI_ASSOC);
+$verifica_admin = mysqli_num_rows($consulta_admin);
 
 
 $id_admin = $n_admin["id"];

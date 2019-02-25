@@ -6,7 +6,8 @@ include '../../config/check.php';
 $modulo = 'clientes';
 $tabela = 'clientes';
 
-$s = $_GET["s"];
+$s = (isset($_GET["s"]) ? $_GET["s"] : '' );
+$p = (isset($p) ? $p : '' );
 
 if ($s == '')
 {
@@ -64,8 +65,8 @@ $numero = numeroentradas($tabela,$filtro);
                             <tbody>
 <?php
 
-$consulta = mysql_query("SELECT * FROM $tabela $filtro ORDER BY nome") or die (mysql_error());
-while($n = mysql_fetch_array($consulta))
+$consulta = mysqli_query($link,"SELECT * FROM $tabela $filtro ORDER BY nome") or die (mysqli_error());
+while($n = mysqli_fetch_array($consulta,MYSQLI_ASSOC))
 {
 
 	$id			= $n['id'];
@@ -113,8 +114,8 @@ while($n = mysql_fetch_array($consulta))
 	$faturas = numeroentradas('faturas','WHERE id_cliente='.$id.'');
 	
 	// CONSULTA FILIAL
-	$consulta_filial = mysql_query("SELECT nome FROM filiais WHERE id='$id_filial'") or die (mysql_error());
-	$n_filial = mysql_fetch_array($consulta_filial);
+	$consulta_filial = mysqli_query($link,"SELECT nome FROM filiais WHERE id='$id_filial'") or die (mysqli_error());
+	$n_filial = mysqli_fetch_array($consulta_filial,MYSQLI_ASSOC);
 
 	$filial	= utf8_encode($n_filial['nome']);
 

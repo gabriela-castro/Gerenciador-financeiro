@@ -6,7 +6,7 @@ session_start();
 include 'config/funcoes.php';
 include 'config/mysql.php';
 
-$id_admin = $_SESSION['id_admin'];
+$id_admin = (isset($_SESSION['id_admin'])) ? $_SESSION['id_admin'] : '';
 
 if ($id_admin != NULL)
 {

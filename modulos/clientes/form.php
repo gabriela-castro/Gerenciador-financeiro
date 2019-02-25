@@ -1,7 +1,7 @@
 <?php
-$id = $_GET['id'];
-$acao = $_GET['acao'];
-$tp = $_GET['tp'];
+$id   = (isset($_GET['id']) ? $_GET['id'] : '') ;
+$acao = (isset($_GET['acao']) ? $_GET['acao'] : '') ;
+$tp   = (isset($_GET['tp']) ? $_GET['tp'] : '') ;
 
 include '../../config/mysql.php';
 include '../../config/funcoes.php';
@@ -11,32 +11,38 @@ $modulo 	= 'clientes';
 $tabela 	= 'clientes';
 $atributos 	= '';
 
-$id_filial		= $_GET['id_filial'];
-$id_conheceu	= $_GET['id_conheceu'];
-$tipo			= $_GET['tipo'];
-$nome			= $_GET['nome'];
-$razao			= $_GET['razao'];
-$fantasia		= $_GET['fantasia'];
-$email			= $_GET['email'];
-$nascimento		= data_brasil_eua($_GET['nascimento']);
-$cpf			= $_GET['cpf'];
-$cnpj			= $_GET['cnpj'];
-$rg				= $_GET['rg'];
-$orgao			= $_GET['orgao'];
-$endereco		= $_GET['endereco'];
-$cep			= $_GET['cep'];
-$bairro			= $_GET['bairro'];
-$cidade			= $_GET['cidade'];
-$uf				= $_GET['uf'];
-$tel1			= $_GET['tel1'];
-$tel2			= $_GET['tel2'];
-$tel3			= $_GET['tel3'];
-$obs			= $_GET['obs'];
+$id_filial		= (isset($_GET['id_filial']) ? $_GET['id_filial'] : '');
+$id_conheceu	= (isset($_GET['id_conheceu']) ? $_GET['id_conheceu'] : '');
+$tipo			= (isset($_GET['tipo']) ? $_GET['tipo'] : '');
+$nome			= (isset($_GET['nome']) ? $_GET['nome'] : '');
+$razao			= (isset($_GET['razao']) ? $_GET['razao'] : '');
+$fantasia		= (isset($_GET['fantasia']) ? $_GET['fantasia'] : '');
+$email			= (isset($_GET['email']) ? $_GET['email'] : '');
+if($tipo == 2){
+$nascimento		= (isset($_GET['nascimento']) ? data_brasil_eua($_GET['nascimento']) : '');
+}else{
+ $nascimento = Date('d/m/Y');	
+}
+$cpf			= (isset($_GET['cpf']) ? $_GET['cpf'] : '');
+$cnpj			= (isset($_GET['cnpj']) ? $_GET['cnpj'] : '');
+$rg				= (isset($_GET['rg']) ? $_GET['rg'] : '');
+$orgao			= (isset($_GET['orgao']) ? $_GET['orgao'] : '');
+$endereco		= (isset($_GET['endereco']) ? $_GET['endereco'] : '');
+$cep			= (isset($_GET['cep']) ? $_GET['cep'] : '');
+$bairro			= (isset($_GET['bairro']) ? $_GET['bairro'] : '');
+$cidade			= (isset($_GET['cidade']) ? $_GET['cidade'] : '');
+$uf				= (isset($_GET['uf']) ? $_GET['uf'] : '');
+$tel1			= (isset($_GET['tel1']) ? $_GET['tel1'] : '');
+$tel2			= (isset($_GET['tel2']) ? $_GET['tel2'] : '');
+$tel3			= (isset($_GET['tel3']) ? $_GET['tel3'] : '');
+$obs			= (isset($_GET['obs']) ? $_GET['obs'] : '');
 $data			= data_hora();
 
 if ($acao == 'adicionar')
 {
-	$insert = mysql_query("INSERT into $tabela (id_filial, id_conheceu, tipo, nome, razao, fantasia, email, nascimento, cpf, cnpj, rg, orgao, endereco, cep, bairro, cidade, uf, tel1, tel2, tel3, obs, data, id_admin) VALUES ('$id_filial', '$id_conheceu', '$tipo', '$nome', '$razao', '$fantasia', '$email', '$nascimento', '$cpf', '$cnpj', '$rg', '$orgao', '$endereco', '$cep', '$bairro', '$cidade', '$uf', '$tel1', '$tel2', '$tel3', '$obs', '$data', '$id_admin')") or die(mysql_error());
+	$sql = "INSERT into $tabela (id_filial, id_conheceu, tipo, nome, razao, fantasia, email, nascimento, cpf, cnpj, rg, orgao, endereco, cep, bairro, cidade, uf, tel1, tel2, tel3, obs, data, id_admin) VALUES ('$id_filial', '$id_conheceu', '$tipo', '$nome', '$razao', '$fantasia', '$email', '$nascimento', '$cpf', '$cnpj', '$rg', '$orgao', '$endereco', '$cep', '$bairro', '$cidade', '$uf', '$tel1', '$tel2', '$tel3', '$obs', '$data', '$id_admin')";
+	//echo $sql; exit;
+	$insert = mysqli_query($link,$sql) or die(mysql_error());
 
 	echo '<script>fecharpopup(); '.$modulo.'(\''.$atributos.'\'); </script>';
 	exit;
@@ -44,14 +50,16 @@ if ($acao == 'adicionar')
 else if ($acao == 'editar')
 {
 	
-	mysql_query("UPDATE $tabela SET id_filial='$id_filial', id_conheceu='$id_conheceu', tipo='$tipo', nome='$nome', razao='$razao', fantasia='$fantasia', email='$email', nascimento='$nascimento', cpf='$cpf', cnpj='$cnpj', rg='$rg', orgao='$orgao', endereco='$endereco', cep='$cep', bairro='$bairro', cidade='$cidade', uf='$uf', tel1='$tel1', tel2='$tel2', tel3='$tel3', obs='$obs' WHERE id='$id'");
+	mysqli_query($link,"UPDATE $tabela SET id_filial='$id_filial', id_conheceu='$id_conheceu', tipo='$tipo', nome='$nome', razao='$razao', fantasia='$fantasia', email='$email', nascimento='$nascimento', cpf='$cpf', cnpj='$cnpj', rg='$rg', orgao='$orgao', endereco='$endereco', cep='$cep', bairro='$bairro', cidade='$cidade', uf='$uf', tel1='$tel1', tel2='$tel2', tel3='$tel3', obs='$obs' WHERE id='$id'");
 	echo '<script>fecharpopup(); '.$modulo.'(\''.$atributos.'\'); </script>';
 	exit;
 }
-	
-$result = mysql_query("SELECT * FROM $tabela WHERE id='$id'");
 
-$n = mysql_fetch_array($result);
+if($id != null){
+	
+$result = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'");
+
+$n = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $id				= $n['id'];
 $id_filial		= $n['id_filial'];
@@ -75,7 +83,7 @@ $tel1			= ($n['tel1']);
 $tel2			= ($n['tel2']);
 $tel3			= ($n['tel3']);
 $obs			= utf8_encode($n['obs']);
-
+}
 ?>
 <script> mascaras(); tipoclientes(); </script>
 <div class="row-fluid">
@@ -182,11 +190,11 @@ $obs			= utf8_encode($n['obs']);
     </select>
     </span>
     <span class="span2">Como Conheceu:<br />
-    <?php echo select($tp,'conheceu','id_conheceu','nome','obrigatorio',$id_conheceu); ?>
+    <?php echo select($tp,'conheceu','id_conheceu','nome','obrigatorio',$id_conheceu,$link); ?>
     </span>
     <span class="span2">
       Filial:<br />
-    <?php echo select($tp,'filiais','id_filial','nome','obrigatorio',$id_filial); ?>
+    <?php echo select($tp,'filiais','id_filial','nome','obrigatorio',$id_filial,$link); ?>
     </span>
     <span class="span2">Telefone¹:<br />
     <input name="tel1" type="text" class="obrigatorio masc_tel span12" id="tel1" value="<?php echo $tel1; ?>" size="30"  required="required"/>

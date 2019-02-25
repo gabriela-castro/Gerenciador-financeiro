@@ -1,16 +1,16 @@
 <?php
 # CALCULA TOTAL
 function calculatotal($campo,$tabela,$filtro) {
-
-	$query1 = mysql_query("SELECT SUM($campo) AS soma FROM $tabela $filtro")or die(mysql_error());
-	$cont1 = mysql_fetch_array($query1);
+    include 'mysql.php'; 
+	$query1 = mysqli_query($link,"SELECT SUM($campo) AS soma FROM $tabela $filtro")or die(mysqli_error());
+	$cont1 = mysqli_fetch_array($query1,MYSQLI_ASSOC);
 	return $cont1["soma"];
 		
 }
 
-#anti injection
-function anti_injection($sql) {
-    $sql = mysql_real_escape_string($sql);
+#anti mysqli_
+function anti_mysqli_($sql) {
+    $sql = mysqli_real_escape_string($sql);
     return $sql;
 }
 #CALCULA DIAS
@@ -62,23 +62,24 @@ function cnpjcpf($cnpj)
 #chama campo
 function chamacampo($tabela,$campo,$id)
 {
-
+    include 'mysql.php';
 	// CONSULTA CLIENTE
-	$consulta_cliente = mysql_query("SELECT $campo FROM $tabela WHERE id='$id'") or die (mysql_error());
-	$n_cliente = mysql_fetch_array($consulta_cliente);
+	$consulta_cliente = mysqli_query($link,"SELECT $campo FROM $tabela WHERE id='$id'") or die (mysqli_error());
+	$n_cliente = mysqli_fetch_array($consulta_cliente,MYSQLI_ASSOC);
 
 	return utf8_encode($n_cliente[''.$campo.'']);	
 }
 #select
 function select($tp,$tabela,$campo,$titulo,$class,$id)
 {
+    include 'mysql.php';
 	$selected = '  <select name="'.$campo.'" id="'.$campo.'" class="'.$class.' span12">';
 	
 	if ($tp == 'edit' || $tp == 'ver' || $tp == 'copia')
 	{
 		
-		$consulta_selected1 = mysql_query("SELECT * FROM $tabela WHERE id='$id'") or die (mysql_error());
-		$n_selected1  = mysql_fetch_array($consulta_selected1);
+		$consulta_selected1 = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'") or die (mysqli_error());
+		$n_selected1  = mysqli_fetch_array($consulta_selected1,MYSQLI_ASSOC);
 		
 		$id_selected1	 = $n_selected1['id'];
 		$nome_selected1 = utf8_encode($n_selected1[''.$titulo.'']);
@@ -95,8 +96,8 @@ function select($tp,$tabela,$campo,$titulo,$class,$id)
 	}
 	
 	// LISTAGEM DE FILIAIS EM ADD
-	$consulta_selected = mysql_query("SELECT * FROM $tabela ORDER BY $titulo") or die (mysql_error());
-	while($n_selected  = mysql_fetch_array($consulta_selected))
+	$consulta_selected = mysqli_query($link,"SELECT * FROM $tabela ORDER BY $titulo") or die (mysqli_error());
+	while($n_selected  = mysqli_fetch_array($consulta_selected,MYSQLI_ASSOC))
 	{
 		
 		$id_selected	 = $n_selected['id'];
@@ -116,13 +117,14 @@ function select($tp,$tabela,$campo,$titulo,$class,$id)
 #select
 function select2($tp,$tabela,$campo,$titulo,$class,$id,$filtro)
 {
+	include 'mysql.php';
 	$selected = '  <select name="'.$campo.'" id="'.$campo.'" class="'.$class.' span12">';
 	
 	if ($tp == 'edit' || $tp == 'ver' || $tp == 'copia')
 	{
 		
-		$consulta_selected1 = mysql_query("SELECT * FROM $tabela WHERE id='$id'") or die (mysql_error());
-		$n_selected1  = mysql_fetch_array($consulta_selected1);
+		$consulta_selected1 = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'") or die (mysqli_error());
+		$n_selected1  = mysqli_fetch_array($consulta_selected1,MYSQLI_ASSOC);
 		
 		$id_selected1	 = $n_selected1['id'];
 		$nome_selected1 = utf8_encode($n_selected1[''.$titulo.'']);
@@ -139,8 +141,8 @@ function select2($tp,$tabela,$campo,$titulo,$class,$id,$filtro)
 	}
 	
 	// LISTAGEM DE FILIAIS EM ADD
-	$consulta_selected = mysql_query("SELECT * FROM $tabela $filtro ORDER BY $titulo") or die (mysql_error());
-	while($n_selected  = mysql_fetch_array($consulta_selected))
+	$consulta_selected = mysqli_query($link,"SELECT * FROM $tabela $filtro ORDER BY $titulo") or die (mysqli_error());
+	while($n_selected  = mysqli_fetch_array($consulta_selected,MYSQLI_ASSOC))
 	{
 		
 		$id_selected	 = $n_selected['id'];
@@ -182,8 +184,9 @@ function metronav($ancora,$modulo,$nome,$numero,$icone,$cor,$tamanho)
 #NUMERO NA TABELA
 function numeroentradas($tabela,$filtro)
 {
-	$sql1 = mysql_query("SELECT * FROM $tabela $filtro");
-	$numero = mysql_num_rows($sql1);
+	include 'mysql.php';
+	$sql1 = mysqli_query($link,"SELECT * FROM $tabela $filtro");
+	$numero = mysqli_num_rows($sql1);
 	return $numero;
 }
 #MES POR EXTENÇO
@@ -256,13 +259,13 @@ function enter2($string)
 #SENHA ENCODE
 function senha_encode($senha)
 {
-	return base64_encode(base64_encode(base64_encode(base64_encode(base64_encode($senha)))));
+	return base64_encode(base64_encode(base64_encode(base64_encode($senha))));
 	
 }
 #SENHA DECODE
 function senha_decode($senha)
 {
-	return base64_decode(base64_decode(base64_decode(base64_decode(base64_decode($senha)))));
+	return base64_decode(base64_decode(base64_decode(base64_decode($senha))));
 	
 }
 #DATA BARRA TRAÇO

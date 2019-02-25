@@ -4,6 +4,7 @@ include '../../config/mysql.php';
 include '../../config/check.php';
 include '../../config/funcoes.php';
 
+
 ?>
 <div class="widget gray">
                     <div class="widget-title">
@@ -60,6 +61,8 @@ include '../../config/funcoes.php';
                                     </thead>
                                     <tbody>
                                     <?php
+$mes = (isset($mes) ? $mes : '');
+$ano = (isset($ano) ? $ano : '');
 									
 			if ($mes == NULL)
 {
@@ -99,8 +102,8 @@ $atributos 	= '&mes='.$mes.'&ano='.$ano.'';
 $filtro		= "WHERE vencimento>='$fdata1' AND vencimento<='$fdata2' AND pagamento='0000-00-00'";
 $orderby 	= 'ORDER BY vencimento';
 					
-$consulta = mysql_query("SELECT * FROM $tabela $filtro $orderby") or die (mysql_error());
-while($n = mysql_fetch_array($consulta))
+$consulta = mysqli_query($link,"SELECT * FROM $tabela $filtro $orderby") or die (mysqli_error());
+while($n = mysqli_fetch_array($consulta,MYSQLI_ASSOC))
 {
 	
 	$id				= $n['id'];
