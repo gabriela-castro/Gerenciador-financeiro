@@ -79,9 +79,9 @@ else
 {
 
 	$filtro = 'WHERE id_cliente='.$id_cliente.'';
-		
-	$consulta_cliente = mysql_query("SELECT id,fantasia FROM clientes WHERE id='$id_cliente' LIMIT 1") or die (mysql_error());
-	$n_cliente = mysql_fetch_array($consulta_cliente);
+	$sql = "SELECT id,fantasia FROM clientes WHERE id='$id_cliente' LIMIT 1";	
+	$consulta_cliente = mysqli_query($link,$sql)  or die('Erro gerado -> ' .mysqli_error($link).'<>'.$sql);
+	$n_cliente = mysqli_fetch_array($consulta_cliente,MYSQLI_ASSOC);
 
 	$fantasia	= utf8_encode($n_cliente['fantasia']);
 }
@@ -124,18 +124,18 @@ $numero = numeroentradas($tabela,$filtro);
                             </thead>
                             <tbody>
 <?php
-
-$consulta = mysqli_query($link,"SELECT * FROM $tabela $filtro ORDER BY vencimento,status") or die (mysql_error());
+$sql = "SELECT * FROM $tabela $filtro ORDER BY vencimento,status"; 
+$consulta = mysqli_query($link,$sql) or die('Erro gerado -> ' .mysqli_error($link).'<>'.$sql);
 while($n = mysqli_fetch_array($consulta,MYSQLI_ASSOC))
 {
 
 	$id				= $n['id'];
 	$id_cliente		= $n['id_cliente'];
-	$vencimento		= data_eua_brasil($n['vencimento']);
-	$enviado		= data_hora_eua_brasil($n['enviado']);
-	$reenviado		= data_hora_eua_brasil($n['reenviado']);
-	$visualizado	= data_hora_eua_brasil($n['visualizado']);
-	$fechado		= data_hora_eua_brasil($n['fechado']);
+	$vencimento		= (isset($n['vencimento']) ? data_eua_brasil($n['vencimento']) : '');
+	$enviado		= (isset($n['enviado']) ? data_hora_eua_brasil($n['enviado']) : '');
+	$reenviado		= (isset($n['reenviado']) ? data_hora_eua_brasil($n['reenviado']) : '');
+	$visualizado	= (isset($n['visualizado']) ? data_hora_eua_brasil($n['visualizado']) : '');
+	$fechado		= (isset($n['fechado']) ? data_hora_eua_brasil($n['fechado']) : '');;
 	$id_servico1	= $n['id_servico1'];
 	$id_servico2	= $n['id_servico2'];
 	$id_servico3	= $n['id_servico3'];

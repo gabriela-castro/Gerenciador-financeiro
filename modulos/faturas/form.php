@@ -14,22 +14,38 @@ $atributos 	= 'id_cliente='.$id_cliente;
 
 
 $vencimento		= (isset($_GET['vencimento']) ?  data_brasil_eua($_GET['vencimento']) : '');
-$id_servico1	= (isset($_GET['id_servico1']) ? $_GET['id_servico1'] : '' );
-$id_servico2	= (isset($_GET['id_servico2']) ? $_GET['id_servico2'] : '' );
-$id_servico3	= (isset($_GET['id_servico3']) ? $_GET['id_servico3'] : '' );
-$id_servico4	= (isset($_GET['id_servico4']) ? $_GET['id_servico4'] : '' );
-$id_servico5	= (isset($_GET['id_servico5']) ? $_GET['id_servico5'] : '' );
-$valor1			= (isset($_GET['valor1']) ? vfloat($_GET['valor1']) : '' );
-$valor2			= (isset($_GET['valor2']) ? vfloat($_GET['valor2']) : '' );
-$valor3			= (isset($_GET['valor3']) ? vfloat($_GET['valor3']) : '' );
-$valor4			= (isset($_GET['valor4']) ? vfloat($_GET['valor4']) : '' );
-$valor5			= (isset($_GET['valor5']) ? vfloat($_GET['valor5']) : '' );
+$id_servico1	= (isset($_GET['id_servico1']) ? $_GET['id_servico1'] : 0 );
+$id_servico2	= (isset($_GET['id_servico2']) ? $_GET['id_servico2'] : 0 );
+$id_servico3	= (isset($_GET['id_servico3']) ? $_GET['id_servico3'] : 0 );
+$id_servico4	= (isset($_GET['id_servico4']) ? $_GET['id_servico4'] : 0 );
+$id_servico5	= (isset($_GET['id_servico5']) ? $_GET['id_servico5'] : 0 );
+$valor1			= (isset($_GET['valor1']) ? vfloat($_GET['valor1']) : 0.0 );
+$valor2			= (isset($_GET['valor2']) ? vfloat($_GET['valor2']) : 0.0 );
+$valor3			= (isset($_GET['valor3']) ? vfloat($_GET['valor3']) : 0.0 );
+$valor4			= (isset($_GET['valor4']) ? vfloat($_GET['valor4']) : 0.0 );
+$valor5			= (isset($_GET['valor5']) ? vfloat($_GET['valor5']) : 0.0 );
 $obs			= (isset($_GET['obs']) ? $_GET['obs'] : '' );
 $data			= data_hora();
 
+
 if ($acao == 'adicionar')
 {
-	$insert = mysqli_query($link,"INSERT into $tabela (id_cliente, vencimento, id_servico1, id_servico2, id_servico3, id_servico4, id_servico5, valor1, valor2, valor3, valor4, valor5, obs, data, id_admin) VALUES ('$id_cliente', '$vencimento', '$id_servico1', '$id_servico2', '$id_servico3', '$id_servico4', '$id_servico5', '$valor1', '$valor2', '$valor3', '$valor4', '$valor5', '$obs', '$data', '$id_admin')") or die(mysql_error());
+if($id_servico2 <= 0 ){
+ $id_servico2 = 0;	
+}
+if($id_servico3 <= 0 ){
+ $id_servico3 = 0;
+}
+if($id_servico4 <= 0 ){
+ $id_servico4 = 0;
+}
+if($id_servico5 <= 0 ){
+ $id_servico5 = 0;
+}  
+$enviado = Date('Y-m-d'); 
+	
+	$sql = "INSERT into $tabela (id_cliente, vencimento, enviado ,id_servico1, id_servico2, id_servico3, id_servico4, id_servico5, valor1, valor2, valor3, valor4, valor5, obs, data, id_admin) VALUES ('$id_cliente', '$vencimento', '$enviado', $id_servico1, $id_servico2, $id_servico3, $id_servico4, $id_servico5, '$valor1', '$valor2', '$valor3', '$valor4', '$valor5', '$obs', '$data', '$id_admin')"; 
+	$insert = mysqli_query($link,$sql) or die('Erro gerado -> ' .mysqli_error($link).'<>'.$sql);
 
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
@@ -80,7 +96,7 @@ else
 <script> mascaras(); calendario('vencimento'); </script>
 <div class="row-fluid">
     <span class="span10">Cliente:<br />
-    <?php echo select2($tpcli,'clientes','id_cliente','fantasia','obrigatorio',$id_cliente.'\' AND status=\'1','WHERE status=1'); ?>
+    <?php echo select2($tpcli,'clientes','id_cliente','fantasia','obrigatorio',$id_cliente.'\' AND status=\'1','WHERE status=1 and cli_for=1'); ?>
     </span>
     <span class="span2"><span id="tfantasia">Vencimento</span>:<br />
     <input name="vencimento" type="text" class="obrigatorio masc_data span12" id="vencimento" value="<?php echo $vencimento; ?>" size="50" maxlength="100" required="required">

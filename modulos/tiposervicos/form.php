@@ -16,14 +16,14 @@ if ($acao == 'adicionar')
 {
 	
 	$nome		= $_GET['nome'];
-	$simbolo	= $_GET['simbolo'];
-	$valor		= vfloat($_GET['valor']);
-	$taxa		= vfloat($_GET['taxa']);
-	$sugerida	= vfloat($_GET['sugerida']);
+	$simbolo	= (isset($_GET['simbolo']) ? $_GET["simbolo"] : '' );
+	$valor		= (isset($_GET['valor']) ? vfloat($_GET['valor']) : '');
+	$taxa		= (isset($_GET['taxa']) ? vfloat($_GET['taxa']) : '');
+	$sugerida	= (isset($_GET['sugerida']) ?vfloat($_GET['sugerida']) : '');;
 	$data		= data_hora();
 
-	
-	$insert = mysqli_query($link,"INSERT into $tabela (nome, data) VALUES ('$nome', '$data')") or die(mysqli_error());
+	$sql = "INSERT into $tabela (nome, data) VALUES ('$nome', '$data')";
+	$insert = mysqli_query($link,$sql) or die('Erro gerado -> ' .mysqli_error($link).'<>'.$sql);
 
 	echo '<script>fecharpopup(); '.$modulo.'(\''.$atributos.'\'); </script>';
 	exit;
@@ -32,13 +32,13 @@ else if ($acao == 'editar')
 {
 	$nome		= $_GET['nome'];
 	$data		= data_hora();
-	
-	mysqli_query("UPDATE $tabela SET nome='$nome' WHERE id='$id'");
+	$sql = "UPDATE $tabela SET nome='$nome' WHERE id='$id'";
+	mysqli_query($link,$sql)or die('Erro gerado -> ' .mysqli_error($link).'<>'.$sql);
 	echo '<script>fecharpopup(); '.$modulo.'(\''.$atributos.'\'); </script>';
 	exit;
 }
-	
-$result = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'");
+$sql = "SELECT * FROM $tabela WHERE id='$id'";	
+$result = mysqli_query($link,$sql) or die('Erro gerado -> ' .mysqli_error($link).'<>'.$sql);
 
 $n = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
