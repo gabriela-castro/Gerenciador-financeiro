@@ -333,6 +333,11 @@ function biblioteca(atributos)
 {
 	meio('#conteudo','index.php'+atributos+'','Biblioteca','biblioteca');
 }
+// Fornecedores
+function fornecedores(atributos)
+{
+	meio('#conteudo','index.php'+atributos+'','Fornecedores','fornecedores');
+}
 // ADICIONAR PASTA
 function addpasta(pai)
 {

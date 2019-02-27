@@ -52,6 +52,10 @@
 		{
 			baixa('');
 		}
+		else if (ancora == 'fornecedores')
+		{
+			fornecedores('');
+		}
 		else
 		{
 			inicial('');

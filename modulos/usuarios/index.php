@@ -4,9 +4,9 @@ include '../../config/funcoes.php';
 include '../../config/check.php';
 
 
-$p = $_GET["p"];
-$sql1 = mysql_query("SELECT * FROM usuarios");
-$numero = mysql_num_rows($sql1);
+$p = (isset($_GET["p"]) ? $_GET["p"] : '' );
+$sql1 = mysqli_query($link,"SELECT * FROM usuarios");
+$numero = mysqli_num_rows($sql1);
 
 ?>
 <script> datatable('#sample_1'); </script>
@@ -32,8 +32,8 @@ $numero = mysql_num_rows($sql1);
 
 
 
-$consulta = mysql_query("SELECT * FROM usuarios ORDER BY nome DESC") or die (mysql_error());
-while($n = mysql_fetch_array($consulta))
+$consulta = mysqli_query($link,"SELECT * FROM usuarios ORDER BY nome DESC") or die (mysqli_error());
+while($n = mysqli_fetch_array($consulta,MYSQLI_ASSOC))
 {
 
 	$id			= $n['id'];

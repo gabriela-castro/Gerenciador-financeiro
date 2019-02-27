@@ -1,9 +1,9 @@
 <?php
-$id = $_GET['id'];
-$acao = $_GET['acao'];
-$tp = $_GET['tp'];
-$ano = $_GET['ano'];
-$mes = $_GET['mes'];
+$id   = (isset($_GET['id']) ? $_GET['id'] : '');
+$acao = (isset($_GET['acao']) ? $_GET['acao'] : '');
+$tp   = (isset($_GET['tp']) ? $_GET['tp'] : '');
+$ano  = (isset($_GET['ano']) ? $_GET['ano'] : '');
+$mes  = (isset($_GET['mes']) ? $_GET['mes'] : '');
 
 include '../../config/mysql.php';
 include '../../config/funcoes.php';
@@ -17,6 +17,7 @@ $atributos 	= 'mes='.$mes.'&ano='.$ano.'';
 if ($acao != '')
 {
 	$titulo		= $_GET['titulo'];
+	$id_fornecedor		= $_GET['fornecedor'];
 	$valor		= vfloat($_GET['valor']);
 	$valor_pago	= vfloat($_GET['valor_pago']);
 	$vencimento	= data_brasil_eua($_GET['vencimento']);
@@ -28,7 +29,7 @@ if ($acao != '')
 if ($acao == 'adicionar')
 {
 	
-	mysql_query("INSERT into $tabela (titulo, valor, valor_pago, vencimento, pagamento, obs, data) VALUES ('$titulo', '$valor', '$valor_pago', '$vencimento', '$pagamento', '$obs', '$data')") or die(mysql_error());
+	mysqli_query($link,"INSERT into $tabela (titulo, valor, valor_pago, vencimento, pagamento, obs, data) VALUES ('$titulo', '$valor', '$valor_pago', '$vencimento', '$pagamento', '$obs', '$data')") or die(mysqli_error($link));
 
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
@@ -36,15 +37,15 @@ if ($acao == 'adicionar')
 else if ($acao == 'editar')
 {
 	
-	mysql_query("UPDATE $tabela SET titulo='$titulo', valor='$valor', valor_pago='$valor_pago', vencimento='$vencimento', pagamento='$pagamento', obs='$obs' WHERE id='$id'");
+	mysqli_query($link,"UPDATE $tabela SET titulo='$titulo', valor='$valor', valor_pago='$valor_pago', vencimento='$vencimento', pagamento='$pagamento', obs='$obs' WHERE id='$id'");
 	
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
 }
 	
-$result = mysql_query("SELECT * FROM $tabela WHERE id='$id'");
+$result = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'");
 
-$n = mysql_fetch_array($result);
+$n = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $id			= $n['id'];
 $titulo		= utf8_encode($n['titulo']);
@@ -53,6 +54,7 @@ $valor_pago	= moeda($n['valor_pago']);
 $vencimento	= data_eua_brasil($n['vencimento']);
 $pagamento	= data_eua_brasil($n['pagamento']);
 $obs		= utf8_encode($n['obs']);
+$id_fornecedor = $n['id_fornecedor'];
 
 if ($vencimento == '//' || $vencimento == '00/00/0000') { $vencimento = ''; }
 if ($pagamento == '//' || $pagamento == '00/00/0000') { $pagamento = ''; }
@@ -68,14 +70,18 @@ if ($pagamento == '//' || $pagamento == '00/00/0000') { $pagamento = ''; }
     </span>
 </div>
 <div class="row-fluid">
-    <span class="span4">Data vencimento:<br />
+    <span class="span3">Data vencimento:<br />
           <input name="vencimento" type="text" id="vencimento" size="50" maxlength="100" value="<?php echo $vencimento; ?>" class="masc_data obrigatorio span12" />
     </span>
-    <span class="span4">Data pagamento:<br />
+    <span class="span3">Data pagamento:<br />
           <input name="pagamento" type="text" id="pagamento" size="50" maxlength="100" value="<?php echo $pagamento; ?>" class="masc_data span12" />
     </span>
-    <span class="span4">Valor pago:<br />
+    <span class="span3">Valor pago:<br />
           <input name="valor_pago" type="text" id="valor_pago" size="50" maxlength="100" value="<?php echo $valor_pago; ?>" class="masc_preco span12" />
+    </span>
+		 <span class="span3">Fornecedor:<br />
+		 
+    <?php echo select($tp,'fornecedores','id','nome','obrigatorio',$id_fornecedor,$link); ?>
     </span>
 </div>
 <div class="row-fluid">

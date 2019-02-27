@@ -1,8 +1,8 @@
 <?php
-$id = $_GET['id'];
-$acao = $_GET['acao'];
-$tp = $_GET['tp'];
-$id_cliente		= $_GET['id_cliente'];
+$id   = (isset($_GET['id']) ? $_GET['id'] : '' );
+$acao = (isset($_GET['acao']) ? $_GET['acao'] : '' );
+$tp   = (isset($_GET['tp']) ? $_GET['tp'] : '' );
+$id_cliente		= (isset($_GET['id_cliente']) ? $_GET['id_cliente'] : '' );
 
 include '../../config/mysql.php';
 include '../../config/funcoes.php';
@@ -13,23 +13,23 @@ $tabela 	= 'faturas';
 $atributos 	= 'id_cliente='.$id_cliente;
 
 
-$vencimento		= data_brasil_eua($_GET['vencimento']);
-$id_servico1	= $_GET['id_servico1'];
-$id_servico2	= $_GET['id_servico2'];
-$id_servico3	= $_GET['id_servico3'];
-$id_servico4	= $_GET['id_servico4'];
-$id_servico5	= $_GET['id_servico5'];
-$valor1			= vfloat($_GET['valor1']);
-$valor2			= vfloat($_GET['valor2']);
-$valor3			= vfloat($_GET['valor3']);
-$valor4			= vfloat($_GET['valor4']);
-$valor5			= vfloat($_GET['valor5']);
-$obs			= $_GET['obs'];
+$vencimento		= (isset($_GET['vencimento']) ?  data_brasil_eua($_GET['vencimento']) : '');
+$id_servico1	= (isset($_GET['id_servico1']) ? $_GET['id_servico1'] : '' );
+$id_servico2	= (isset($_GET['id_servico2']) ? $_GET['id_servico2'] : '' );
+$id_servico3	= (isset($_GET['id_servico3']) ? $_GET['id_servico3'] : '' );
+$id_servico4	= (isset($_GET['id_servico4']) ? $_GET['id_servico4'] : '' );
+$id_servico5	= (isset($_GET['id_servico5']) ? $_GET['id_servico5'] : '' );
+$valor1			= (isset($_GET['valor1']) ? vfloat($_GET['valor1']) : '' );
+$valor2			= (isset($_GET['valor2']) ? vfloat($_GET['valor2']) : '' );
+$valor3			= (isset($_GET['valor3']) ? vfloat($_GET['valor3']) : '' );
+$valor4			= (isset($_GET['valor4']) ? vfloat($_GET['valor4']) : '' );
+$valor5			= (isset($_GET['valor5']) ? vfloat($_GET['valor5']) : '' );
+$obs			= (isset($_GET['obs']) ? $_GET['obs'] : '' );
 $data			= data_hora();
 
 if ($acao == 'adicionar')
 {
-	$insert = mysql_query("INSERT into $tabela (id_cliente, vencimento, id_servico1, id_servico2, id_servico3, id_servico4, id_servico5, valor1, valor2, valor3, valor4, valor5, obs, data, id_admin) VALUES ('$id_cliente', '$vencimento', '$id_servico1', '$id_servico2', '$id_servico3', '$id_servico4', '$id_servico5', '$valor1', '$valor2', '$valor3', '$valor4', '$valor5', '$obs', '$data', '$id_admin')") or die(mysql_error());
+	$insert = mysqli_query($link,"INSERT into $tabela (id_cliente, vencimento, id_servico1, id_servico2, id_servico3, id_servico4, id_servico5, valor1, valor2, valor3, valor4, valor5, obs, data, id_admin) VALUES ('$id_cliente', '$vencimento', '$id_servico1', '$id_servico2', '$id_servico3', '$id_servico4', '$id_servico5', '$valor1', '$valor2', '$valor3', '$valor4', '$valor5', '$obs', '$data', '$id_admin')") or die(mysql_error());
 
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
@@ -37,14 +37,14 @@ if ($acao == 'adicionar')
 else if ($acao == 'editar')
 {
 	
-	mysql_query("UPDATE $tabela SET id_cliente='$id_cliente', vencimento='$vencimento', id_servico1='$id_servico1', id_servico2='$id_servico2', id_servico3='$id_servico3', id_servico4='$id_servico4', id_servico5='$id_servico5', valor1='$valor1', valor2='$valor2', valor3='$valor3', valor4='$valor4', valor5='$valor5', obs='$obs' WHERE id='$id'");
+	mysqli_query($link,"UPDATE $tabela SET id_cliente='$id_cliente', vencimento='$vencimento', id_servico1='$id_servico1', id_servico2='$id_servico2', id_servico3='$id_servico3', id_servico4='$id_servico4', id_servico5='$id_servico5', valor1='$valor1', valor2='$valor2', valor3='$valor3', valor4='$valor4', valor5='$valor5', obs='$obs' WHERE id='$id'");
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
 }
 	
-$result = mysql_query("SELECT * FROM $tabela WHERE id='$id'");
+$result = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'");
 
-$n = mysql_fetch_array($result);
+$n = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $id				= $n['id'];
 if ($id_cliente == '') { $id_cliente = $n['id_cliente']; }

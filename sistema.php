@@ -132,6 +132,7 @@ if ($tp_admin == 1)
 {
 	echo menu('inicial','Home','icon-home','');
 	echo menu('clientes','Clientes','icon-book','');
+	echo menu('fornecedores','Fornecedores','icon-book','');
 	echo menu('financeiro','Financeiro','icon-usd','');
 	echo menu('faturas','Faturas','icon-barcode','');
 	echo menu('contasapagar','Contas a pagar','icon-warning-sign','');

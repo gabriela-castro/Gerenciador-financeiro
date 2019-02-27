@@ -21,7 +21,7 @@ $email			= (isset($_GET['email']) ? $_GET['email'] : '');
 if($tipo == 2){
 $nascimento		= (isset($_GET['nascimento']) ? data_brasil_eua($_GET['nascimento']) : '');
 }else{
- $nascimento = Date('d/m/Y');	
+ $nascimento = data_brasil_eua(Date('d/m/Y'));	
 }
 $cpf			= (isset($_GET['cpf']) ? $_GET['cpf'] : '');
 $cnpj			= (isset($_GET['cnpj']) ? $_GET['cnpj'] : '');
@@ -41,8 +41,8 @@ $data			= data_hora();
 if ($acao == 'adicionar')
 {
 	$sql = "INSERT into $tabela (id_filial, id_conheceu, tipo, nome, razao, fantasia, email, nascimento, cpf, cnpj, rg, orgao, endereco, cep, bairro, cidade, uf, tel1, tel2, tel3, obs, data, id_admin) VALUES ('$id_filial', '$id_conheceu', '$tipo', '$nome', '$razao', '$fantasia', '$email', '$nascimento', '$cpf', '$cnpj', '$rg', '$orgao', '$endereco', '$cep', '$bairro', '$cidade', '$uf', '$tel1', '$tel2', '$tel3', '$obs', '$data', '$id_admin')";
-	//echo $sql; exit;
-	$insert = mysqli_query($link,$sql) or die(mysql_error());
+	//echo $sql; //exit;
+	$insert = mysqli_query($link,$sql) or die(mysqli_error($link));
 
 	echo '<script>fecharpopup(); '.$modulo.'(\''.$atributos.'\'); </script>';
 	exit;

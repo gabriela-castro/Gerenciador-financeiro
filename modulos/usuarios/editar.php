@@ -1,6 +1,6 @@
 <?php
-$id = $_GET['id'];
-$acao = $_GET['acao'];
+$id = (isset($_GET['id']) ? $_GET["id"] : '' );
+$acao = (isset($_GET['acao']) ? $_GET["acao"] : '' );
 
 include '../../config/mysql.php';
 include '../../config/funcoes.php';
@@ -13,14 +13,14 @@ if ($acao == 'editar')
 	$email	= $_GET['email'];
 	$senha	= senha_encode($_GET['senha']);
 	
-	mysql_query("UPDATE usuarios SET nome='$nome', email='$email', login='$login', senha='$senha' WHERE id='$id'");
+	mysqli_query($link,"UPDATE usuarios SET nome='$nome', email='$email', login='$login', senha='$senha' WHERE id='$id'");
 	echo '<script>fecharpopup(); usuarios(\'\'); </script>';
 	exit;
 }
 	
-$result = mysql_query("SELECT * FROM usuarios WHERE id=$id");
+$result = mysqli_query($link,"SELECT * FROM usuarios WHERE id=$id");
 
-$n = mysql_fetch_array($result);
+$n = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $nome	 = utf8_encode($n['nome']);
 $login	 = utf8_encode($n['login']);

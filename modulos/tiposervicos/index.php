@@ -33,8 +33,8 @@ $numero = numeroentradas($tabela,'');
 
 
 
-$consulta = mysql_query("SELECT * FROM $tabela ORDER BY nome DESC") or die (mysql_error());
-while($n = mysql_fetch_array($consulta))
+$consulta = mysqli_query($link,"SELECT * FROM $tabela ORDER BY nome DESC") or die (mysqli_error());
+while($n = mysqli_fetch_array($consulta,MYSQLI_ASSOC))
 {
 
 	$id			= $n['id'];

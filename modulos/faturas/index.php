@@ -3,9 +3,10 @@ include '../../config/mysql.php';
 include '../../config/funcoes.php';
 include '../../config/check.php';
 
-$id_cliente 	= $_GET['id_cliente'];
-$id_cliente2 	= $_GET['id_cliente'];
-$listar 		= $_GET['listar'];
+$id_cliente 	= (isset($_GET['id_cliente']) ? $_GET['id_cliente'] : '' );
+$id_cliente2 	= (isset($_GET['id_cliente']) ? $_GET['id_cliente'] : '' );
+$listar 		= (isset($_GET['listar']) ? $_GET['listar'] : '' );
+$abertas        = (isset($abertas) ? $abertas : '' );
 
 if ($id_cliente == 'undefined' || $abertas == '1')
 {
@@ -96,7 +97,7 @@ $numero = numeroentradas($tabela,$filtro);
                                 <button class="btn btn-small" onclick="abrirpopup('modulos/<?php echo $modulo; ?>/form.php?tp=add&<?php echo $atributos; ?>','Adicionar'); return false;"><i class="icon-plus icon-white"></i> Adicionar</button>
                             </span>
                             <span class="tools">
-                                <?php echo $imgfiltro; ?>
+                                <?php echo @$imgfiltro; ?>
                             </span>
                             <?php if ($id_cliente == '' && $listar == '') { ?>
                             <span class="tools">
@@ -124,8 +125,8 @@ $numero = numeroentradas($tabela,$filtro);
                             <tbody>
 <?php
 
-$consulta = mysql_query("SELECT * FROM $tabela $filtro ORDER BY vencimento,status") or die (mysql_error());
-while($n = mysql_fetch_array($consulta))
+$consulta = mysqli_query($link,"SELECT * FROM $tabela $filtro ORDER BY vencimento,status") or die (mysql_error());
+while($n = mysqli_fetch_array($consulta,MYSQLI_ASSOC))
 {
 
 	$id				= $n['id'];

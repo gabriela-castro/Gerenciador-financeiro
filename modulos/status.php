@@ -10,7 +10,7 @@ include '../config/funcoes.php';
 include '../config/check.php';
 
 
-mysql_query("UPDATE $tabela SET status='$status' WHERE id='$id'");
+mysqli_query($link,"UPDATE $tabela SET status='$status' WHERE id='$id'");
 
 //STATUS
 if ($status == '1')

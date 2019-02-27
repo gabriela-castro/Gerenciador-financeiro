@@ -76,8 +76,8 @@ $numero = numeroentradas($tabela,$filtro);
 
 
 
-$consulta = mysql_query("SELECT * FROM $tabela $filtro $orderby") or die (mysql_error());
-while($n = mysql_fetch_array($consulta))
+$consulta = mysqli_query($link,"SELECT * FROM $tabela $filtro $orderby") or die (mysqli_error());
+while($n = mysqli_fetch_array($consulta,MYSQLI_ASSOC))
 {
 	
 	$id				= $n['id'];
@@ -149,13 +149,13 @@ while($n = mysql_fetch_array($consulta))
 <?php 
 
 #CONSULTANDO FINANCEIRO P/ O SOMATÓRIO DO TOTAL DE SAÍDA
-$query1 = mysql_query("SELECT SUM(valor) AS soma FROM $tabela $filtro")or die(mysql_error());
-$cont1 = mysql_fetch_array($query1);
+$query1 = mysqli_query($link,"SELECT SUM(valor) AS soma FROM $tabela $filtro")or die(mysqli_error());
+$cont1 = mysqli_fetch_array($query1,MYSQLI_ASSOC);
 $saida = ($cont1["soma"]);
 
 #CONSULTANDO FINANCEIRO P/ O SOMATÓRIO DO TOTAL DE SAÍDA PAGAS
-$query = mysql_query("SELECT SUM(valor_pago) AS soma FROM $tabela $filtro")or die(mysql_error());
-$cont = mysql_fetch_array($query);
+$query = mysqli_query($link,"SELECT SUM(valor_pago) AS soma FROM $tabela $filtro")or die(mysqli_error());
+$cont = mysqli_fetch_array($query,MYSQLI_ASSOC);
 $pago = $cont["soma"];
 
 

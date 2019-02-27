@@ -96,7 +96,9 @@ function select($tp,$tabela,$campo,$titulo,$class,$id)
 	}
 	
 	// LISTAGEM DE FILIAIS EM ADD
-	$consulta_selected = mysqli_query($link,"SELECT * FROM $tabela ORDER BY $titulo") or die (mysqli_error());
+	$sql = "SELECT * FROM $tabela ORDER BY $titulo";
+	//echo $sql;
+	$consulta_selected = mysqli_query($link,$sql) or die (mysqli_error($link));
 	while($n_selected  = mysqli_fetch_array($consulta_selected,MYSQLI_ASSOC))
 	{
 		
@@ -298,6 +300,8 @@ function data_brasil_eua($data)
 #DATA EUA BRASIL
 function data_eua_brasil($data)
 {
+    $data =	(isset($data) ?  $data : Date('Y-m-d'));
+	
 	$array = explode("-",$data);
 	
 	return $array[2].'/'.$array[1].'/'.$array[0];

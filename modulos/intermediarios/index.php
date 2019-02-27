@@ -8,7 +8,9 @@ $tabela = 'intermediarios';
 $orderby = 'ORDER BY nome';
 $atributos = '';
 
-$s = $_GET["s"];
+
+$s = (isset($_GET["s"]) ? $_GET["s"] : '' );
+$p = (isset($p) ? $p : '' );
 
 if ($s == '')
 {
@@ -63,8 +65,8 @@ $numero = numeroentradas($tabela,$filtro);
                             <tbody>
 <?php
 
-$consulta = mysql_query("SELECT * FROM $tabela $filtro $orderby") or die (mysql_error());
-while($n = mysql_fetch_array($consulta))
+$consulta = mysqli_query($link,"SELECT * FROM $tabela $filtro $orderby") or die (mysqli_error());
+while($n = mysqli_fetch_array($consulta,MYSQLI_ASSOC))
 {
 
 	$id				= $n['id'];

@@ -1,7 +1,7 @@
 <?php
-$id = $_GET['id'];
-$acao = $_GET['acao'];
-$tp = $_GET['tp'];
+$id   = (isset($_GET['id']) ? $_GET["id"] : '' );
+$acao = (isset($_GET['acao']) ? $_GET["acao"] : '' );
+$tp   = (isset($_GET['tp']) ? $_GET["tp"] : '' );
 
 include '../../config/mysql.php';
 include '../../config/funcoes.php';
@@ -23,7 +23,7 @@ if ($acao == 'adicionar')
 	$data		= data_hora();
 
 	
-	$insert = mysql_query("INSERT into $tabela (nome, data) VALUES ('$nome', '$data')") or die(mysql_error());
+	$insert = mysqli_query($link,"INSERT into $tabela (nome, data) VALUES ('$nome', '$data')") or die(mysqli_error());
 
 	echo '<script>fecharpopup(); '.$modulo.'(\''.$atributos.'\'); </script>';
 	exit;
@@ -33,14 +33,14 @@ else if ($acao == 'editar')
 	$nome		= $_GET['nome'];
 	$data		= data_hora();
 	
-	mysql_query("UPDATE $tabela SET nome='$nome' WHERE id='$id'");
+	mysqli_query("UPDATE $tabela SET nome='$nome' WHERE id='$id'");
 	echo '<script>fecharpopup(); '.$modulo.'(\''.$atributos.'\'); </script>';
 	exit;
 }
 	
-$result = mysql_query("SELECT * FROM $tabela WHERE id='$id'");
+$result = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'");
 
-$n = mysql_fetch_array($result);
+$n = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $id			= $n['id'];
 $nome		= utf8_encode($n['nome']);

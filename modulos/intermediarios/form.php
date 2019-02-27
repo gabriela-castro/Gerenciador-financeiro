@@ -1,7 +1,7 @@
 <?php
-$id = $_GET['id'];
-$acao = $_GET['acao'];
-$tp = $_GET['tp'];
+$id   = (isset($_GET['id']) ? $_GET["id"] : '' );
+$acao = (isset($_GET['acao']) ? $_GET["acao"] : '' );
+$tp   = (isset($_GET['tp']) ? $_GET["tp"] : '' );
 
 include '../../config/mysql.php';
 include '../../config/funcoes.php';
@@ -11,11 +11,11 @@ $modulo 	= 'intermediarios';
 $tabela 	= 'intermediarios';
 $atributos 	= '';
 
-$email				= $_GET['email'];
+$email				= (isset($_GET['email']) ? $_GET["email"] : '' );
 /*
 if ($acao == 'adicionar')
 {
-	$insert = mysql_query("INSERT into $tabela (email) VALUES ('$email')") or die(mysql_error());
+	$insert = mysqli_query("INSERT into $tabela (email) VALUES ('$email')") or die(mysqli_error());
 
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
@@ -23,14 +23,14 @@ if ($acao == 'adicionar')
 else */if ($acao == 'editar')
 {
 	
-	mysql_query("UPDATE $tabela SET email='$email' WHERE id='$id'");
+	mysqli_query($link,"UPDATE $tabela SET email='$email' WHERE id='$id'");
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
 }
 	
-$result = mysql_query("SELECT * FROM $tabela WHERE id='$id'");
+$result = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'");
 
-$n = mysql_fetch_array($result);
+$n = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $id					= $n['id'];
 $nome				= utf8_encode($n['nome']);
