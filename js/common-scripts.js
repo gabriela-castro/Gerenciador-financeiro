@@ -838,3 +838,53 @@ function formintermediarios(id,acao)
 	}
 
 }
+
+
+// FORM FORNECEDORES
+function formfornecedores(id,acao)
+{	
+	var id_filial	=	escape($('#id_filial').val());
+	var id_conheceu	=	escape($('#id_conheceu').val());
+	var tipo		=	escape($('#tipo').val());
+	var nome		=	escape($('#nome').val());
+	var razao		=	escape($('#razao').val());
+	var fantasia	=	escape($('#fantasia').val());
+	var email		=	escape($('#email').val());
+	var nascimento	= 	escape($('#nascimento').val());
+	var cpf			=	escape($('#cpf').val());
+	var cnpj		=	escape($('#cnpj').val());
+	var rg			=	escape($('#rg').val());
+	var orgao		=	escape($('#orgao').val());
+	var endereco	=	escape($('#endereco').val());
+	var cep			=	escape($('#cep').val());
+	var bairro		=	escape($('#bairro').val());
+	var cidade		=	escape($('#cidade').val());
+	var uf			=	escape($('#uf').val());
+	var tel1		=	escape($('#tel1').val());
+	var tel2		=	escape($('#tel2').val());
+	var tel3		=	escape($('#tel3').val());
+	var obs			=	escape($('#obs').val());
+	
+	if ((conheceu == '' || nome == '' || fantasia == '' || email == '' || cpf == '' || tel1 == '' || cidade == '') && tipo == '2')
+	{
+		alert ('Os campos com borda marcada são obrigatorios.');
+		
+		$(".obrigatorio").css('border', '1px solid #FFAEB0');
+	}
+	else if ((conheceu == '' || nome == '' || razao == '' || fantasia == '' || email == '' || cnpj == '' || tel1 == '' || cidade == '') && tipo == '1')
+	{
+		alert ('Os campos com borda marcada são obrigatorios.');
+		
+		$(".obrigatorio").css('border', '1px solid #FFAEB0');
+	}
+	else 
+	{
+		ajax('.conteudopopup', 'modulos/fornecedores/form.php?acao='+acao+'&id='+id+'&id_filial='+id_filial+'&id_conheceu='+id_conheceu+'&tipo='+tipo+'&nome='+nome+'&razao='+razao+'&fantasia='+fantasia+'&email='+email+'&nascimento='+nascimento+'&cpf='+cpf+'&cnpj='+cnpj+'&rg='+rg+'&orgao='+orgao+'&endereco='+endereco+'&cep='+cep+'&bairro='+bairro+'&cidade='+cidade+'&uf='+uf+'&tel1='+tel1+'&tel2='+tel2+'&tel3='+tel3+'&obs='+obs);
+	}
+
+}
+//DELETAR CLIENTES
+function delfornecedores(id)
+{
+	ajax('.conteudopopup','modulos/fornecedores/deletar.php?acao=deletar&id='+id);
+}

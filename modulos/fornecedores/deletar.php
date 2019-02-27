@@ -1,7 +1,7 @@
 <?php
 $id = $_GET['id'];
 
-$acao = $_GET['acao'];
+$acao = (isset($_GET['acao']) ? $_GET['acao'] : '');
 
 
 include '../../config/mysql.php';
@@ -11,8 +11,8 @@ include '../../config/check.php';
 if ($acao == 'deletar')
 {
 
-	mysql_query("DELETE FROM clientes WHERE id=$id");
-	echo '<script>fecharpopup(); clientes(\'\'); </script>';
+	mysqli_query($link,"DELETE FROM clientes WHERE id=$id") or die('Erro gerado -> '. mysqli_error($link) . '<br/>' .$sql);;
+	echo '<script>fecharpopup(); fornecedores(\'\'); </script>';
 	exit;
 		
 }
@@ -23,6 +23,6 @@ if ($acao == 'deletar')
       <p><b>
       Esta ação não poderá ser revertida futuramente.</b></p>
       <p>
-      <button class="btn btn-danger" onclick="delclientes('<?php echo $id; ?>'); return false;"><i class="icon-remove icon-white"></i> Deletar</button>
+      <button class="btn btn-danger" onclick="delfornecedores('<?php echo $id; ?>'); return false;"><i class="icon-remove icon-white"></i> Deletar</button>
     </p></center>
     </div>

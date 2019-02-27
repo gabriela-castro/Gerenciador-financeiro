@@ -187,9 +187,14 @@ function metronav($ancora,$modulo,$nome,$numero,$icone,$cor,$tamanho)
 function numeroentradas($tabela,$filtro)
 {
 	include 'mysql.php';
-	$sql1 = mysqli_query($link,"SELECT * FROM $tabela $filtro");
+	$sql  = "SELECT * FROM $tabela $filtro";
+	$sql1 = mysqli_query($link,$sql) or die('Erro gerado -> '. mysqli_error($link) . '<br/>' .$sql);
+	if($sql1){
 	$numero = mysqli_num_rows($sql1);
 	return $numero;
+	}else{
+	return 0;
+	}
 }
 #MES POR EXTENÇO
 function mesextenco($mes)

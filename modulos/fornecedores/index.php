@@ -4,7 +4,7 @@ include '../../config/funcoes.php';
 include '../../config/check.php';
 
 $modulo = 'fornecedores';
-$tabela = 'fornecedores';
+$tabela = 'clientes';
 
 $s = (isset($_GET["s"]) ? $_GET["s"] : '' );
 $p = (isset($p) ? $p : '' );
@@ -12,25 +12,25 @@ $p = (isset($p) ? $p : '' );
 if ($s == '')
 {
 	$s = 1;
-	$filtro = 'WHERE status=1';
+	$filtro = 'WHERE status=1 and cli_for=2';
 	$imgfiltro = '<button onclick="'.$modulo.'(\'?s=2&p='.$p.'\'); return false;" class="btn btn-small btn-success center" data-toggle="modal">
 	<i class="icon-thumbs-up"></i></button>';
 }
 else if ($s == 0)
 {
-	$filtro = '';
+	$filtro = 'WHERE cli_for=2';
 	$imgfiltro = '<button onclick="'.$modulo.'(\'?s=1&p='.$p.'\'); return false;" class="btn btn-small btn-info center" data-toggle="modal">
 	<i class="icon-globe"></i></button>';
 }
 else if ($s == 1)
 {
-	$filtro = 'WHERE status=1';
+	$filtro = 'WHERE status=1 and cil_for=2';
 	$imgfiltro = '<button onclick="'.$modulo.'(\'?s=2&p='.$p.'\'); return false;" class="btn btn-small btn-success center" data-toggle="modal">
 	<i class="icon-thumbs-up"></i></button>';
 }
 else if ($s == 2)
 {
-	$filtro = 'WHERE status=2';
+	$filtro = 'WHERE status=2 and cil_for=2';
 	$imgfiltro = '<button onclick="'.$modulo.'(\'?s=0&p='.$p.'\'); return false;" class="btn btn-small btn-danger center" data-toggle="modal">
 	<i class="icon-thumbs-down"></i></button>';
 }
@@ -42,7 +42,7 @@ $numero = numeroentradas($tabela,$filtro);
 <script> datatable('#sample_1'); </script>
 <div class="widget gray">
                     <div class="widget-title">
-                        <h4><i class="icon-reorder"></i> Clientes (<?php echo $numero; ?>)</h4>
+                        <h4><i class="icon-reorder"></i> Fornecedores (<?php echo $numero; ?>)</h4>
                             <span class="tools">
                                 <button class="btn btn-small" onclick="abrirpopup('modulos/<?php echo $modulo; ?>/form.php?tp=add','Adicionar'); return false;"><i class="icon-plus icon-white"></i> Adicionar</button>
                             </span>
@@ -64,8 +64,8 @@ $numero = numeroentradas($tabela,$filtro);
                             </thead>
                             <tbody>
 <?php
-
-$consulta = mysqli_query($link,"SELECT * FROM $tabela $filtro ORDER BY nome") or die (mysqli_error());
+$sql = "SELECT * FROM $tabela $filtro ORDER BY nome"; 
+$consulta = mysqli_query($link,$sql) or die ('Erro gerado -> '. mysqli_error($link) .'<br>'.$sql);
 while($n = mysqli_fetch_array($consulta,MYSQLI_ASSOC))
 {
 
