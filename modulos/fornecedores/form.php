@@ -58,7 +58,7 @@ else if ($acao == 'editar')
 
 if($id != null){
 	
-$result = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'");
+$result = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'")or die('Erro gerado -> '. mysqli_error($link) .'<br>'.$sql);
 
 $n = mysqli_fetch_array($result,MYSQLI_ASSOC);
 

@@ -46,14 +46,14 @@ if ($acao == 'adicionar')
 else */if ($acao == 'editar')
 {
 	
-	mysql_query("UPDATE $tabela SET prazo='$prazo', taxa='$taxa', conta_cedente='$conta_cedente', conta_cedente_d='$conta_cedente_d', agencia='$agencia', agencia_d='$agencia_d', conta='$conta', conta_d='$conta_d', carteira='$carteira', carteira_descricao='$carteira_descricao', identificacao='$identificacao', cpf_cnpj='$cpf_cnpj', endereco='$endereco', cidade='$cidade', uf='$uf', cedente='$cedente', convenio='$convenio', contrato='$contrato', instrucoes1='$instrucoes1', instrucoes2='$instrucoes2', instrucoes3='$instrucoes3', instrucoes4='$instrucoes4', obs='$obs' WHERE id='$id'");
+	mysqli_query($link,"UPDATE $tabela SET prazo='$prazo', taxa='$taxa', conta_cedente='$conta_cedente', conta_cedente_d='$conta_cedente_d', agencia='$agencia', agencia_d='$agencia_d', conta='$conta', conta_d='$conta_d', carteira='$carteira', carteira_descricao='$carteira_descricao', identificacao='$identificacao', cpf_cnpj='$cpf_cnpj', endereco='$endereco', cidade='$cidade', uf='$uf', cedente='$cedente', convenio='$convenio', contrato='$contrato', instrucoes1='$instrucoes1', instrucoes2='$instrucoes2', instrucoes3='$instrucoes3', instrucoes4='$instrucoes4', obs='$obs' WHERE id='$id'") or die('Erro gerado -> '. mysqli_error($link) .'<br>'.$sql);
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
 }
 	
-$result = mysql_query("SELECT * FROM $tabela WHERE id='$id'");
+$result = mysqli_query("SELECT * FROM $tabela WHERE id='$id'")or die('Erro gerado -> '. mysqli_error($link) .'<br>'.$sql);
 
-$n = mysql_fetch_array($result);
+$n = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
 $id					= $n['id'];
 $banco				= utf8_encode($n['banco']);
