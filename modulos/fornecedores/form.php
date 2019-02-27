@@ -43,7 +43,7 @@ if ($acao == 'adicionar')
 {
 	$sql = "INSERT into $tabela (id_filial, id_conheceu, tipo, nome, razao, fantasia, email, nascimento, cpf, cnpj, rg, orgao, endereco, cep, bairro, cidade, uf, tel1, tel2, tel3, obs, data, id_admin, cli_for) VALUES ('$id_filial', '$id_conheceu', '$tipo', '$nome', '$razao', '$fantasia', '$email', '$nascimento', '$cpf', '$cnpj', '$rg', '$orgao', '$endereco', '$cep', '$bairro', '$cidade', '$uf', '$tel1', '$tel2', '$tel3', '$obs', '$data', '$id_admin', 2)";
 	//echo $sql; //exit;
-	$insert = mysqli_query($link,$sql) or die(mysqli_error($link));
+	$insert = mysqli_query($link,$sql) or die('Erro gerado -> '. mysqli_error($link) .'<br>'.$sql);
 
 	echo '<script>fecharpopup(); '.$modulo.'(\''.$atributos.'\'); </script>';
 	exit;
@@ -51,7 +51,7 @@ if ($acao == 'adicionar')
 else if ($acao == 'editar')
 {
 	
-	mysqli_query($link,"UPDATE $tabela SET id_filial='$id_filial', id_conheceu='$id_conheceu', tipo='$tipo', nome='$nome', razao='$razao', fantasia='$fantasia', email='$email', nascimento='$nascimento', cpf='$cpf', cnpj='$cnpj', rg='$rg', orgao='$orgao', endereco='$endereco', cep='$cep', bairro='$bairro', cidade='$cidade', uf='$uf', tel1='$tel1', tel2='$tel2', tel3='$tel3', obs='$obs' WHERE id='$id'");
+	mysqli_query($link,"UPDATE $tabela SET id_filial='$id_filial', id_conheceu='$id_conheceu', tipo='$tipo', nome='$nome', razao='$razao', fantasia='$fantasia', email='$email', nascimento='$nascimento', cpf='$cpf', cnpj='$cnpj', rg='$rg', orgao='$orgao', endereco='$endereco', cep='$cep', bairro='$bairro', cidade='$cidade', uf='$uf', tel1='$tel1', tel2='$tel2', tel3='$tel3', obs='$obs' WHERE id='$id'") or die('Erro gerado -> '. mysqli_error($link) .'<br>'.$sql);
 	echo '<script>fecharpopup(); '.$modulo.'(\''.$atributos.'\'); </script>';
 	exit;
 }

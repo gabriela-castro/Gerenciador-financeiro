@@ -40,7 +40,7 @@ $data			= data_hora();
 
 if ($acao == 'adicionar')
 {
-	$sql = "INSERT into $tabela (id_filial, id_conheceu, tipo, nome, razao, fantasia, email, nascimento, cpf, cnpj, rg, orgao, endereco, cep, bairro, cidade, uf, tel1, tel2, tel3, obs, data, id_admin) VALUES ('$id_filial', '$id_conheceu', '$tipo', '$nome', '$razao', '$fantasia', '$email', '$nascimento', '$cpf', '$cnpj', '$rg', '$orgao', '$endereco', '$cep', '$bairro', '$cidade', '$uf', '$tel1', '$tel2', '$tel3', '$obs', '$data', '$id_admin')";
+	$sql = "INSERT into $tabela (id_filial, id_conheceu, tipo, nome, razao, fantasia, email, nascimento, cpf, cnpj, rg, orgao, endereco, cep, bairro, cidade, uf, tel1, tel2, tel3, obs, data, id_admin, cli_for) VALUES ('$id_filial', '$id_conheceu', '$tipo', '$nome', '$razao', '$fantasia', '$email', '$nascimento', '$cpf', '$cnpj', '$rg', '$orgao', '$endereco', '$cep', '$bairro', '$cidade', '$uf', '$tel1', '$tel2', '$tel3', '$obs', '$data', '$id_admin',1)";
 	//echo $sql; //exit;
 	$insert = mysqli_query($link,$sql) or die(mysqli_error($link));
 

@@ -12,7 +12,7 @@ $p = (isset($p) ? $p : '' );
 if ($s == '')
 {
 	$s = 1;
-	$filtro = 'WHERE status=1';
+	$filtro = 'WHERE status=1 and cli_for=1';
 	$imgfiltro = '<button onclick="'.$modulo.'(\'?s=2&p='.$p.'\'); return false;" class="btn btn-small btn-success center" data-toggle="modal">
 	<i class="icon-thumbs-up"></i></button>';
 }
@@ -24,13 +24,13 @@ else if ($s == 0)
 }
 else if ($s == 1)
 {
-	$filtro = 'WHERE status=1';
+	$filtro = 'WHERE status=1 and cli_for=1';
 	$imgfiltro = '<button onclick="'.$modulo.'(\'?s=2&p='.$p.'\'); return false;" class="btn btn-small btn-success center" data-toggle="modal">
 	<i class="icon-thumbs-up"></i></button>';
 }
 else if ($s == 2)
 {
-	$filtro = 'WHERE status=2';
+	$filtro = 'WHERE status=2 and cli_for=1';
 	$imgfiltro = '<button onclick="'.$modulo.'(\'?s=0&p='.$p.'\'); return false;" class="btn btn-small btn-danger center" data-toggle="modal">
 	<i class="icon-thumbs-down"></i></button>';
 }
