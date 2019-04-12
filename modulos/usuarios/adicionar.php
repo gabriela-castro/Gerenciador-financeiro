@@ -1,5 +1,5 @@
 <?php
-$acao = $_GET['acao'];
+$acao = (isset($_GET['acao']) ? $_GET['acao'] : '');
 
 include '../../config/mysql.php';
 include '../../config/funcoes.php';
@@ -12,20 +12,20 @@ if ($acao == 'adicionar')
 	$login	= $_GET['login'];
 	$email	= $_GET['email'];
 	$senha	= senha_encode($_GET['senha']);
-	
-	$insert = mysql_query("INSERT into usuarios (nome, email, login, senha) VALUES ('$nome', '$email', '$login', '$senha')") or die(mysql_error());
+	$sql = "INSERT into usuarios (nome, email, login, senha) VALUES ('$nome', '$email', '$login', '$senha')";
+	$insert = mysqli_query($link,$sql) or die(mysqli_error($link));
 
 	echo '<script>fecharpopup(); usuarios(\'\'); </script>';
 	exit;
 }
 ?>
 <div class="row-fluid">
-    <span class="span6">Nome:<br />
+    <span class="span6">Nome:.<br />
           <input name="nome" type="text" id="nome" size="50" maxlength="100" class="obrigatorio span12" />
     </span>
     <span class="span6">
           Email:<br />
-        <input name="email" type="text" id="email" size="50" maxlength="100" class="obrigatorio span12" />
+        <input name="email" type="email" id="email" size="50" maxlength="100" class="obrigatorio span12" />
     </span>
 </div>
 <div class="row-fluid">

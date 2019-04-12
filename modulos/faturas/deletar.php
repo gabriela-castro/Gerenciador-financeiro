@@ -1,8 +1,8 @@
 <?php
 $id = $_GET['id'];
 
-$acao = $_GET['acao'];
-$id_cliente = $_GET['id_cliente'];
+$acao = (isset($_GET['acao']) ? $_GET['acao'] : '');
+$id_cliente = (isset($_GET['id_cliente']) ? $_GET['id_cliente'] : '');
 
 
 include '../../config/mysql.php';
@@ -15,8 +15,8 @@ $atributos 	= 'id_cliente='.$id_cliente;
 
 if ($acao == 'deletar')
 {
-
-	mysql_query("DELETE FROM $tabela WHERE id=$id");
+    $sql = "DELETE FROM $tabela WHERE id=$id";
+	mysql_query(mysqli_query($link,$sql););
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
 		

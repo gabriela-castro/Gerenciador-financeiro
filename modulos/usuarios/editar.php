@@ -34,7 +34,7 @@ $senha	 = senha_decode($n['senha']);
       </span>
     <span class="span6">
       Email:<br />
-    <input name="email" type="text" class="obrigatorio span12" id="email" value="<?php echo $email; ?>" size="50" maxlength="100" />
+    <input name="email" type="email" class="obrigatorio span12" id="email" value="<?php echo $email; ?>" size="50" maxlength="100" />
     </span>
     </div>
 <div class="row-fluid">

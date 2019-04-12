@@ -32,3 +32,7 @@ CREATE TABLE `empresa` (
 ) ENGINE=InnoDB
 AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_swedish_ci'
 ;
+
+-- 14-04-2019
+ALTER TABLE `usuarios` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `usuarios` CHANGE `id_func` `id_func` INT(11) NULL COMMENT 'id de colaborador no banco de funcionarios';
