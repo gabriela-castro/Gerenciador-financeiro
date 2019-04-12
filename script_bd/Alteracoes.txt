@@ -4,3 +4,31 @@ ALTER TABLE `faturas` MODIFY COLUMN `reenviado` DATETIME DEFAULT NULL;
 ALTER TABLE `faturas` MODIFY COLUMN `visualizado` DATETIME DEFAULT NULL;
 ALTER TABLE `faturas` MODIFY COLUMN `fechado` DATE DEFAULT NULL;
 ALTER TABLE `faturas` MODIFY COLUMN `id_pagamento` INTEGER(11) DEFAULT NULL;
+
+-- Criando a tabela empresa
+CREATE TABLE `empresa` (
+  `id_empresa` INTEGER(11) NOT NULL AUTO_INCREMENT,
+  `cnpj_empresa` VARCHAR(25) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `razaosocial_empresa` VARCHAR(255) COLLATE latin1_swedish_ci NOT NULL,
+  `nomefantasia_empresa` VARCHAR(255) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `datafundacao_empresa` DATE DEFAULT NULL,
+  `cep_empresa` CHAR(15) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `endereco_empresa` VARCHAR(255) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `numero_empresa` INTEGER(11) DEFAULT NULL,
+  `bairro_empresa` VARCHAR(255) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `complemento_empresa` VARCHAR(255) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `cidade_empresa` VARCHAR(255) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `email_empresa` VARCHAR(150) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `fonecomercial_empresa` VARCHAR(20) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `telefone_empresa` VARCHAR(20) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `Ie_empresa` VARCHAR(25) COLLATE latin1_swedish_ci DEFAULT NULL COMMENT 'Inscricao Estadual',
+  `Uf_empresa` CHAR(2) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `Estado_empresa` VARCHAR(50) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `Im_empresa` VARCHAR(60) COLLATE latin1_swedish_ci DEFAULT NULL COMMENT 'Inscricao Municipal',
+  `Cnae_empresa` VARCHAR(100) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `RegimeTributario_empresa` VARCHAR(100) COLLATE latin1_swedish_ci DEFAULT NULL,
+  `status` CHAR(1) COLLATE latin1_swedish_ci NOT NULL COMMENT '1=Ativo/2=Inativo',
+  PRIMARY KEY USING BTREE (`id_empresa`)
+) ENGINE=InnoDB
+AUTO_INCREMENT=1 ROW_FORMAT=DYNAMIC CHARACTER SET 'latin1' COLLATE 'latin1_swedish_ci'
+;

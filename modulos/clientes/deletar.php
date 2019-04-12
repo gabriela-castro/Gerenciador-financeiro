@@ -1,7 +1,7 @@
 <?php
-$id = $_GET['id'];
+$id = (isset($_GET['id']) ? $_GET['id'] : '');
 
-$acao = $_GET['acao'];
+$acao = (isset($_GET['acao']) ? $_GET['acao'] : '');
 
 
 include '../../config/mysql.php';
@@ -10,8 +10,9 @@ include '../../config/check.php';
 
 if ($acao == 'deletar')
 {
-
-	mysql_query("DELETE FROM clientes WHERE id=$id");
+  $sql = "DELETE FROM clientes WHERE id=$id";
+	mysqli_query($link,$sql);
+	
 	echo '<script>fecharpopup(); clientes(\'\'); </script>';
 	exit;
 		
