@@ -750,6 +750,7 @@ function formcontasapagar(id,acao,atributos)
 	var vencimento	= escape($("#vencimento").val());
 	var pagamento	= escape($("#pagamento").val());
 	var obs			= escape($("#obs").val());
+	var fornecedor  = escape($("#id_fornecedor").val())
 	
 	if (titulo == '' || valor == '' || vencimento == '')
 	{
@@ -759,7 +760,7 @@ function formcontasapagar(id,acao,atributos)
 	}
 	else 
 	{
-		ajax('.conteudopopup', 'modulos/contasapagar/form.php?acao='+acao+'&id='+id+'&titulo='+titulo+'&valor='+valor+'&valor_pago='+valor_pago+'&vencimento='+vencimento+'&pagamento='+pagamento+'&obs='+obs+atributos);
+		ajax('.conteudopopup', 'modulos/contasapagar/form.php?acao='+acao+'&fornecedor='+fornecedor+'&id='+id+'&titulo='+titulo+'&valor='+valor+'&valor_pago='+valor_pago+'&vencimento='+vencimento+'&pagamento='+pagamento+'&obs='+obs+atributos);
 	}	
 
 }

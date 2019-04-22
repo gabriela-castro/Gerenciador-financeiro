@@ -15,7 +15,8 @@ $tabela 	= 'contasapagar';
 $atributos 	= 'mes='.$mes.'&ano='.$ano.'';
 
 if ($acao != '')
-{
+{  
+	
 	$titulo		= $_GET['titulo'];
 	$id_fornecedor		= $_GET['fornecedor'];
 	$valor		= vfloat($_GET['valor']);
@@ -28,16 +29,20 @@ if ($acao != '')
 
 if ($acao == 'adicionar')
 {
-	
-	mysqli_query($link,"INSERT into $tabela (titulo, valor, valor_pago, vencimento, pagamento, obs, data) VALUES ('$titulo', '$valor', '$valor_pago', '$vencimento', '$pagamento', '$obs', '$data')") or die(mysqli_error($link));
+	$sql = "INSERT into $tabela (id_fornecedor,titulo, valor, valor_pago, vencimento, pagamento, obs, data) 
+	        VALUES ('$id_fornecedor','$titulo', '$valor', '$valor_pago', '$vencimento', '$pagamento', '$obs', '$data')";
+			
+	mysqli_query($link,$sql) or die(mysqli_error($link));
 
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
 }
 else if ($acao == 'editar')
 {
-	
-	mysqli_query($link,"UPDATE $tabela SET titulo='$titulo', valor='$valor', valor_pago='$valor_pago', vencimento='$vencimento', pagamento='$pagamento', obs='$obs' WHERE id='$id'");
+	$sql = "UPDATE $tabela SET id_fornecedor='$id_fornecedor', titulo='$titulo', valor='$valor', 
+	        valor_pago='$valor_pago', vencimento='$vencimento', pagamento='$pagamento', obs='$obs' WHERE id='$id'";
+		
+	mysqli_query($link,$sql);
 	
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
@@ -81,7 +86,7 @@ if ($pagamento == '//' || $pagamento == '00/00/0000') { $pagamento = ''; }
     </span>
 		 <span class="span3">Fornecedor:<br />
 		 
-    <?php echo select($tp,'fornecedores','id','nome','obrigatorio',$id_fornecedor,$link); ?>
+    <?php echo select2($tp,'clientes','id_fornecedor','fantasia','obrigatorio',$id_fornecedor,' WHERE status=1 and cli_for=2'); ?>
     </span>
 </div>
 <div class="row-fluid">

@@ -143,7 +143,8 @@ function select2($tp,$tabela,$campo,$titulo,$class,$id,$filtro)
 	}
 	
 	// LISTAGEM DE FILIAIS EM ADD
-	$consulta_selected = mysqli_query($link,"SELECT * FROM $tabela $filtro ORDER BY $titulo") or die (mysqli_error());
+	$sql = "SELECT * FROM $tabela $filtro ORDER BY $titulo";
+	$consulta_selected = mysqli_query($link,$sql) or die (mysqli_error());
 	while($n_selected  = mysqli_fetch_array($consulta_selected,MYSQLI_ASSOC))
 	{
 		
@@ -156,7 +157,6 @@ function select2($tp,$tabela,$campo,$titulo,$class,$id,$filtro)
 	}
 	$selected .=  '
 	</select>';
-	
 	return $selected;
 	
 		

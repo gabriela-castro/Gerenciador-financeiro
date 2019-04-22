@@ -124,7 +124,7 @@ $obs			= utf8_encode($n['obs']);
 </div>
 <div class="row-fluid fisica" <?php if ($tipo == '1' || $tipo == '') { ?>style="display:none;" <?php } ?>>
     <span class=" span3">Nascimento:<br />
-    <input name="nascimento" type="text" class=" masc_data span12" id="nascimento" value="<?php echo $nascimento; ?>" size="50" maxlength="100" />
+    <input name="nascimento" type="text" class=" masc_data span12" id="nascimento" value="<?php echo data_eua_brasil($nascimento); ?>" size="50" maxlength="100" />
     </span>
     <span class=" span3">CPF:<br />
     <input name="cpf" type="text" class="obrigatorio masc_cpf span12" id="cpf" value="<?php echo $cpf; ?>" size="30" required="required" />
