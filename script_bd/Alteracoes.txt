@@ -40,3 +40,5 @@ ALTER TABLE `usuarios` CHANGE `id_func` `id_func` INT(11) NULL COMMENT 'id de co
 
 -- 22/04-2019
 ALTER TABLE `contasapagar` CHANGE `id_pagamento` `id_pagamento` INT(11) NULL, CHANGE `id_aquisicao` `id_aquisicao` INT(11) NULL;
+ALTER TABLE `contasapagar` CHANGE `compra` `compra` DATE NULL;
+ALTER TABLE `contasapagar` CHANGE `parcelamento` `parcelamento` INT(11) NULL;
