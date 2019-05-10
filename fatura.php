@@ -10,9 +10,9 @@ $data = data_hora();
 
 
 // CONSULTA FATURA
-$consulta_fatura = mysql_query("SELECT * FROM faturas WHERE id='$id'");
+$consulta_fatura = mysqli_query($link,"SELECT * FROM faturas WHERE id='$id'");
 
-$n_fatura = mysql_fetch_array($consulta_fatura);
+$n_fatura = mysqli_fetch_array($consulta_fatura,MYSQLI_ASSOC);
 
 $id				= $n_fatura['id'];
 $id_cliente 	= $n_fatura['id_cliente'];
@@ -33,7 +33,7 @@ $obs			= utf8_encode($n_fatura['obs']);
 if ($v != '1' && $status != '5')
 {
 	// ATUALIZA O STATUS PARA VISUALIZADO
-	mysql_query("UPDATE faturas SET status='4', visualizado='$data' WHERE id='$id'");
+	mysqli_query($link,"UPDATE faturas SET status='4', visualizado='$data' WHERE id='$id'");
 }
 
 // TOTAL DE VALORES
@@ -66,9 +66,9 @@ if ($id_servico5 != 0)
 }
 
 // CONSULTA CLIENTE
-$consulta_cliente = mysql_query("SELECT * FROM clientes WHERE id='$id_cliente'");
+$consulta_cliente = mysqli_query($link,"SELECT * FROM clientes WHERE id='$id_cliente'");
 
-$n_cliente = mysql_fetch_array($consulta_cliente);
+$n_cliente = mysqli_fetch_array($consulta_cliente,MYSQLI_ASSOC);
 
 $fantasia		= utf8_encode($n_cliente['fantasia']);
 $endereco		= utf8_encode($n_cliente['endereco']);
@@ -166,8 +166,8 @@ $uf				= $n_cliente['uf'];
 				if ($numero_pagamento1 != 0)
 				{
 
-					$consulta_b = mysql_query("SELECT * FROM boletos WHERE status='1'") or die (mysql_error());
-					while($n_b = mysql_fetch_array($consulta_b))
+					$consulta_b = mysqli_query($link,"SELECT * FROM boletos WHERE status='1'") or die (mysqli_error());
+					while($n_b = mysqli_fetch_array($consulta_b,MYSQLI_ASSOC))
 					{
 
 						echo '<a class="icon-btn span5" href="'.$urlsistema.'boleto/boleto.php?b='.decbin($n_b['id']).'&i='.decbin($id).'">
@@ -179,8 +179,8 @@ $uf				= $n_cliente['uf'];
 				if ($numero_pagamento2 != 0)
 				{
 
-					$consulta_o = mysql_query("SELECT * FROM intermediarios WHERE status='1'") or die (mysql_error());
-					while($n_o = mysql_fetch_array($consulta_o))
+					$consulta_o = mysqli_query($link,"SELECT * FROM intermediarios WHERE status='1'") or die (mysqli_error());
+					while($n_o = mysqli_fetch_array($consulta_o,MYSQLI_ASSOC))
 					{
 						if ($n_o['id'] == '2')
 						{

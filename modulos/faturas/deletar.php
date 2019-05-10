@@ -16,7 +16,7 @@ $atributos 	= 'id_cliente='.$id_cliente;
 if ($acao == 'deletar')
 {
     $sql = "DELETE FROM $tabela WHERE id=$id";
-	mysql_query(mysqli_query($link,$sql););
+	mysql_query($link,$sql);
 	echo '<script>fecharpopup(); '.$modulo.'(\'?'.$atributos.'\'); </script>';
 	exit;
 		

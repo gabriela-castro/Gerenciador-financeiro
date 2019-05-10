@@ -5,42 +5,45 @@ include '../../config/mysql.php';
 include '../../config/funcoes.php';
 //include '../../config/check.php';
 
-$id 			= $_GET['id'];
-$acao 			= $_GET['acao'];
-$tp 			= $_GET['tp'];
-$id_cliente		= $_GET['id_cliente'];
+$id   = (isset($_GET['id']) ? $_GET["id"] : '' );
+$acao = (isset($_GET['acao']) ? $_GET["acao"] : '' );
+$tp   = (isset($_GET['tp']) ? $_GET["tp"] : '' );
+$id_cliente		= (isset($_GET['id_cliente']) ? $_GET["id_cliente"] : '' );
 
 $modulo 	= 'faturas';
 $tabela 	= 'faturas';
 $atributos 	= 'id_cliente='.$id_cliente;
 
 
-$fechado	= data_brasil_eua($_GET['fechado']);
-$status		= $_GET['status'];
+$fechado	= @data_brasil_eua((isset($_GET['fechado']) ? $_GET["fechado"] : '' ));
+$status		= (isset($_GET['status']) ? $_GET["status"] : '' );
 
 if ($acao == 'editar')
 {
 	
-	mysql_query("UPDATE $tabela SET fechado='$fechado', status='$status' WHERE id='$id'");
+	mysqli_query($link,"UPDATE $tabela SET fechado='$fechado', status='$status' WHERE id='$id'");
 	echo '<script> $(\'#envio_'.$id.'\').html(\' \'); </script>';
 	echo '<button onclick="abrirpopup(\'modulos/'.$modulo.'/status.php?id='.$id.'&'.$atributos.'\',\'Fatura #'.$id.'\'); return false;" class="btn btn-success center" data-toggle="modal"><i class="icon-thumbs-up"></i> FECHADO</button>';
 	exit;
 }
 	
-$result = mysql_query("SELECT * FROM $tabela WHERE id='$id'");
+$result = mysqli_query($link,"SELECT * FROM $tabela WHERE id='$id'");
 
-$n = mysql_fetch_array($result);
-
+$n = mysqli_fetch_array($result,MYSQLI_ASSOC);
+/*echo('<pre>');
+print_r($n);
+exit;
+*/
 $id				= $n['id'];
 if ($id_cliente == '') { $id_cliente = $n['id_cliente']; }
 
-$vencimento		= data_eua_brasil($n['vencimento']);
-$data			= data_hora_eua_brasil($n['data']);
-$enviado		= data_hora_eua_brasil($n['enviado']);
-$reenviado		= data_hora_eua_brasil($n['reenviado']);
-$visualizado	= data_hora_eua_brasil($n['visualizado']);
-$vencimento		= data_eua_brasil($n['vencimento']);
-$fechado		= data_eua_brasil($n['fechado']);
+$vencimento		= @data_eua_brasil($n['vencimento']);
+$data			= @data_hora_eua_brasil($n['data']);
+$enviado		= @data_hora_eua_brasil($n['enviado']);
+$reenviado		= @data_hora_eua_brasil($n['reenviado']);
+$visualizado	= @data_hora_eua_brasil($n['visualizado']);
+$vencimento		= @data_eua_brasil($n['vencimento']);
+$fechado		= @data_eua_brasil($n['fechado']);
 
 $id_servico1	= $n['id_servico1'];
 $id_servico2	= $n['id_servico2'];

@@ -4,15 +4,15 @@ include '../../config/mysql.php';
 include '../../config/funcoes.php';
 include '../../config/check.php';
 	
-$id = $_GET['id'];
-$acao = $_GET['acao'];
-$funcao = $_GET['funcao'];
+$id   = (isset($_GET['id']) ? $_GET["id"] : '' );
+$acao = (isset($_GET['acao']) ? $_GET["acao"] : '' );
+$funcao = (isset($_GET['funcao']) ? $_GET['funcao'] : '');
 
 
 // CONSULTA FATURA
-$consulta_fatura = mysql_query("SELECT * FROM faturas WHERE id='$id'");
+$consulta_fatura = mysqli_query($link,"SELECT * FROM faturas WHERE id='$id'");
 
-$n_fatura = mysql_fetch_array($consulta_fatura);
+$n_fatura = mysqli_fetch_array($consulta_fatura,MYSQLI_ASSOC);
 
 $id				= $n_fatura['id'];
 $id_cliente 	= $n_fatura['id_cliente'];
@@ -193,7 +193,7 @@ if ($acao == 'envio' || $acao == 'reenvio')
 	{
 		if ($acao == 'envio')
 		{
-			mysql_query("UPDATE faturas SET enviado='$data', status='2' WHERE id='$id'");
+			mysqli_query($link,"UPDATE faturas SET enviado='$data', status='2' WHERE id='$id'");
 			echo '<script>';
 			echo '$(\'#envio_'.$id.'\').html(\'\'); ';
 			echo '</script>';
@@ -201,7 +201,7 @@ if ($acao == 'envio' || $acao == 'reenvio')
 		}
 		else if ($acao == 'reenvio')
 		{
-			mysql_query("UPDATE faturas SET reenviado='$data', status='3' WHERE id='$id'");	
+			mysqli_query($link,"UPDATE faturas SET reenviado='$data', status='3' WHERE id='$id'");	
 			echo '<script>';
 			echo '$(\'#envio_'.$id.'\').html(\'\'); ';
 			echo '</script>';
