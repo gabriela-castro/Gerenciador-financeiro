@@ -1,7 +1,7 @@
 <?php
-$id = $_GET['id'];
+$id = (isset($_GET['id']) ? $_GET["id"] : '' );
 
-$acao = $_GET['acao'];
+$acao = (isset($_GET['acao']) ? $_GET["acao"] : '' );
 
 
 include '../../config/mysql.php';
@@ -15,7 +15,7 @@ $atributos 	= '';
 if ($acao == 'deletar')
 {
 
-	mysql_query("DELETE FROM $tabela WHERE id=$id");
+	mysqli_query($link,"DELETE FROM $tabela WHERE id=$id");
 	echo '<script>fecharpopup(); '.$modulo.'(\'\'); </script>';
 	exit;
 		
